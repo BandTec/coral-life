@@ -55,3 +55,19 @@ li a:hover {
 .contato {
     float: right;
 }
+
+.strong {
+    font-family: tahoma;
+    color: white;
+    font-size: 40px;
+    margin-left: 30px;
+}
+
+.fotoperfil {
+    width: 50px;
+    height: 50px;
+    background-color: white;
+    margin-left: 75px;
+    border-radius: 100px;
+    margin-top: 10px;
+}
