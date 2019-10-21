@@ -1,39 +1,58 @@
-body {
-    margin: 0;
-    /*Sem margem fora do componente*/
-    padding: 0;
-    /*padding dentro do componente margem interna*/
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+body{
+
+    margin: 0; /*Sem margem fora do componente*/
+    padding: 0; /*padding dentro do componente margem interna*/
+    font-family: 'Nunito', sans-serif;
+
 }
 
-.log img {
+.log img{
     padding: 40px 40px 0px 40px;
+    float: left;
+}
+
+.nav{
+
+    align-content: bottom;
+
 }
 
 .xpto a {
-    text-decoration: none;
-    color: #60a3bc;
-    padding-right: 15px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-weight: bold;
-    text-align: center;
-}
+   
+        text-decoration: none;
+        color: #60a3bc;
+        padding-right: 15px;
+        font-family: 'Nunito', sans-serif;
+        font-weight: bold;
+ 
+  }
 
-.xpto {
-    margin-bottom: 20px;
-}
+  .xpto{
 
-.form a {
+    margin-bottom: -20px;
+    float: left;
+    padding: 60px;
+    margin-left: 160px;
+
+
+  }
+
+  .form a {
+   
     text-decoration: none;
     color: white;
     padding-right: 15px;
     margin-top: 100px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Nunito', sans-serif;
     font-weight: bold;
+    
+
 }
 
-.form {
+.form{
+
     margin-top: 60px;
+
 }
 
 
