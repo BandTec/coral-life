@@ -38,25 +38,23 @@
             <br>
             <br>
             <label for="">Seu nome</label><br>
-            <input id="nome" type="text"
-                style="width: 250px; height: 35px; outline: none; border-radius: 100px; border: none"
-                placeholder="Digite seu nome" autofocus>
+            <input type="email" style="width: 250px; height: 35px; outline: none; border-radius: 100px; border: none"
+                placeholder="Digite seu email" autofocus>
             <br>
             <br>
             <label for="">Seu email</label><br>
-            <input id="email" type="email"
-                style="width: 250px; height: 35px; outline: none; border-radius: 100px; border: none"
+            <input type="email" style="width: 250px; height: 35px; outline: none; border-radius: 100px; border: none"
                 placeholder="Digite seu email">
             <br>
             <br>
             <label for="">Assunto</label><br>
-            <textarea id="msn" name="" id="" cols="30" rows="10"
+            <textarea name="" id="" cols="30" rows="10"
                 style="width: 300px; outline: none; border-radius: 20px;"></textarea>
             <br>
             <br>
             <br>
             <br>
-            <button onclick="limpar()"
+            <button
                 style="background-color:#60a3bc; width: 200px; height: 35px; outline: none; color: white; border-radius: 200px; border: none">Enviar</button>
 
         </div>
@@ -65,50 +63,3 @@
 </body>
 
 </html>
-
-
-<script>
-
-    function limpar() {
-
-
-        if (nome.value == "" || email.value == "" || msn.value == "") {
-
-            if (nome.value == "") {
-
-                alert(`Preencha o campo nome`);
-
-
-            }
-            if (email.value == "") {
-
-                alert(`Preencha o campo E-mail`);
-
-
-            }
-            if (msn.value == "") {
-
-                alert(`Preencha o campo mensagem `);
-
-
-            }
-
-
-        }
-        else {
-
-            alert(`Obrigado pela mensagem!`);
-
-            nome.value = "";
-            email.value = "";
-            msn.value = "";
-
-
-        }
-
-
-
-    }
-
-
-</script>

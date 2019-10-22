@@ -30,7 +30,7 @@
 
     <center>
         <div style="background:rgb(0, 0, 0); background: rgba(0, 0, 0, 0.4); 
-        width: 500px; height: 500px; margin-top: 100px; margin-bottom: 50px">
+        width: 500px; height: 500px; margin-top: 100px;">
             <br>
             <span style="font-size: 30px;">Registrar-se</span>
             <br>
@@ -38,26 +38,23 @@
             <br>
             <br>
             <label for="">Nome de Usuario</label><br>
-            <input id="nome" type="text"
-                style="width: 250px; height: 35px; outline: none; border-radius: 100px; border: none"
-                placeholder="Digite o Nome de Usuario" autofocus>
+            <input type="text" style="width: 250px; height: 35px; outline: none; border-radius: 100px; border: none"
+                placeholder="Digite seu email" autofocus>
             <br>
             <br>
             <label for="">Senha</label><br>
-            <input id="senha" type="password"
-                style="width: 250px; height: 35px; outline: none; border-radius: 100px; border: none"
+            <input type="password" style="width: 250px; height: 35px; outline: none; border-radius: 100px; border: none"
                 placeholder="Digite sua senha">
             <br>
             <br>
             <label for="">Confirmar senha</label><br>
-            <input id="senha2" type="password"
-                style="width: 250px; height: 35px; outline: none; border-radius: 100px; border: none"
+            <input type="password" style="width: 250px; height: 35px; outline: none; border-radius: 100px; border: none"
                 placeholder="Confirme sua senha">
             <br>
             <br>
             <br>
             <br>
-            <button onclick="limpar()"
+            <button
                 style="background-color:#60a3bc; width: 200px; height: 35px; outline: none; color: white; border-radius: 200px; border: none">Registrar</button>
 
         </div>
@@ -65,73 +62,3 @@
 </body>
 
 </html>
-
-
-<script>
-
-    function limpar() {
-
-
-
-
-
-
-
-        if (nome.value == "" || senha.value == "" || senha2.value == "" || senha.value != senha2.value) {
-
-            if (nome.value == "") {
-
-                alert(`Preencha o campo nome`);
-
-
-            }
-            if (senha.value == "") {
-
-                alert(`Preencha o campo E-mail`);
-
-
-            }
-            if (senha2.value == "") {
-
-                alert(`Preencha o campo mensagem`);
-
-
-            }
-
-            if (senha.value != senha2.value) {
-
-
-                alert(`As senhas são diferentes`);
-
-
-
-
-            }
-
-
-
-        } else {
-            alert(`Usuário Registrado!`);
-
-            nome.value = "";
-            senha.value = "";
-            senha2.value = "";
-
-
-
-        }
-
-
-
-
-
-
-
-    }
-
-
-
-
-
-
-</script>
