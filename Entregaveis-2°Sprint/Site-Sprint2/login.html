@@ -29,15 +29,17 @@
 
     <center>
         <div style="background:rgb(0, 0, 0); background: rgba(0, 0, 0, 0.4); 
-        width: 400px; height: 400px; margin-top: 100px;">
+        width: 400px; height: 400px; margin-top: 100px; margin-bottom: 50px">
+
             <br>
+            <span style="font-size: 30px;">Entrar</span>
             <br>
             <br>
             <br>
             <label for="">Nome de Usuario</label><br>
             <input type="text" id="user"
                 style="width: 250px; height: 35px; outline: none; border-radius: 100px; border: none"
-                placeholder="Digite seu email" autofocus>
+                placeholder="Digite o Nome de Usuario" autofocus>
             <br>
             <br>
             <label for="">Senha</label><br>
@@ -64,18 +66,22 @@
         var valor_user = (user.value);
         var valor_senha = (senha.value);
 
+
+
         if (valor_user == "corallife@gmail.com" && valor_senha == "coral") {
 
             window.open('./dashboard.html');
 
         } else {
             alert(`Usuário inexistente!!`);
+
         }
 
+        // deixa o input vazio ao clicar no botão
+        user.value = "";
+        senha.value = "";
 
     }
-
-
 
 
 
