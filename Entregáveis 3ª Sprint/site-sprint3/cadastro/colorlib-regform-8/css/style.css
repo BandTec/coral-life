@@ -266,11 +266,11 @@ body {
   color: #fff;
   text-transform: uppercase;
   border: none;
-  background-image: -moz-linear-gradient(to left, #74ebd5, #9face6);
-  background-image: -ms-linear-gradient(to left, #74ebd5, #9face6);
-  background-image: -o-linear-gradient(to left, #74ebd5, #9face6);
-  background-image: -webkit-linear-gradient(to left, #74ebd5, #9face6);
-  background-image: linear-gradient(to left, #74ebd5, #9face6); }
+  background-image: -moz-linear-gradient(to left, #248b78, #4be3ee);
+  background-image: -ms-linear-gradient(to left, #0e6b5a, #3ce0d3);
+  background-image: -o-linear-gradient(to left, #1b7c6a, #45e4cf);
+  background-image: -webkit-linear-gradient(to left, #0e7764, #23d1c8);
+  background-image: linear-gradient(to left, #0f7764, #39d7ec); }
 
 input[type=checkbox]:not(old) {
   width: 2em;
