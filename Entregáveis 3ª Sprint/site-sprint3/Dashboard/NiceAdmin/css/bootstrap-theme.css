@@ -1,13 +1,4 @@
-/*!
- * Bootstrap v3.0.0
- *
- * Copyright 2013 Twitter, Inc
- * Licensed under the Apache License v2.0
- * http://www.apache.org/licenses/LICENSE-2.0
- *
- * Designed and built with all the love in the world by @mdo and @fat.
- */
-/*! normalize.css v2.1.0 | MIT License | git.io/normalize */
+
 article,
 aside,
 details,
@@ -106,6 +97,7 @@ img {
 }
 svg:not(:root) {
   overflow: hidden;
+  background-color: rgba(145, 228, 210, 0.692);
 }
 figure {
   margin: 0;
@@ -177,7 +169,7 @@ table {
 @media print {
   * {
     text-shadow: none !important;
-    color: #000 !important;
+    color: rgb(0, 0, 0) !important;
     background: transparent !important;
     box-shadow: none !important;
   }
@@ -5904,4 +5896,16 @@ td.visible-print {
   td.hidden-print {
     display: none !important;
   }
+}
+
+.bolinha {
+  height: 20%;
+  fill: rgb(158, 106, 22);
+  stroke: rgb(0, 0, 0);
+  fill-opacity: 1;
+  stroke-width: 2;
+  stroke-opacity: 0.4;
+  r: 7;
+  cursor: pointer;
+  margin-left: 50%;
 }
