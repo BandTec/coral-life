@@ -148,7 +148,9 @@
                 <a href="#"><i class="icon_mail_alt"></i> Caixa de email</a>
               </li>
               <li>
-                <a href="login.html"><i class="icon_key_alt"></i>Sair</a>
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalExemplo">
+                  Abrir modal de demonstração
+                </button>
               </li>
             </ul>
           </li>
@@ -186,191 +188,39 @@
         </ul>
 
       </div>
+      
     </aside>
-    <!-- Mapa central -->
-    <section id="main-content">
-      <section class="wrapper">
 
-        <div class="row">
-        </div>
-        <div class="row">
-          <div class="col-lg-9 col-md-12">
+      
+      <!-- Botão para acionar modal -->
 
-            <div class="panel panel-default">
-              <div class="panel-heading">
-                <h2><i class="fa fa-map-marker red"></i><strong>Localização Domos</strong></h2>
-                <div class="panel-actions">
-                  <a href="index.html#" class="btn-setting"><i class="fa fa-rotate-right"></i></a>
-                  <a href="index.html#" class="btn-minimize"><i class="fa fa-chevron-up"></i></a>
-                  <a href="index.html#" class="btn-close"><i class="fa fa-times"></i></a>
-                </div>
-              </div>
-              <div class="panel-body-map">
-                <div id="map" style="height:400px;color: rgb(11, 80, 80)">
-                  <button type="button" class="bolinha1" data-toggle="modal" data-target="#centralModalSm">
-
-                  </button>
-                  <div class="bolinha2"></div>
-                  <div class="bolinha3"></div>
-                </div>
-              </div>
-              <!-- Botão para acionar modal -->
-
-
-              <!-- Modal -->
-
-            </div>
-          </div>
-          <div class="col-md-3">
-            <!-- graficos gerais lateral -->
-            <ul class="today-datas">
-              <li>
-                <div><span id="todayspark4" class="spark"></span></div>
-                <div class="datas-text">Media/estação</div>
-              </li>
-              <li>
-                <div><span id="todayspark5" class="spark"></span></div>
-                <div class="datas-text">Temperatura diaria</div>
-              </li>
-            </ul>
-          </div>
-
-
-        </div>
-        <!-- Caixa de informação -->
-        <div class="row">
-
-          <div class="col-lg-9 col-md-12">
-            <div class="panel panel-default">
-              <div class="panel-heading">
-                <h2><i class="fa fa-flag-o red"></i><strong>Registro</strong></h2>
-                <div class="panel-actions">
-                  <a href="index.html#" class="btn-setting"><i class="fa fa-rotate-right"></i></a>
-                  <a href="index.html#" class="btn-minimize"><i class="fa fa-chevron-up"></i></a>
-                  <a href="index.html#" class="btn-close"><i class="fa fa-times"></i></a>
-                </div>
-              </div>
-              <div class="panel-body">
-                <table class="table bootstrap-datatable countries">
-                  <thead>
-                    <tr>
-                      <th></th>
-                      <th>Localização</th>
-                      <th>Nome</th>
-                      <th></th>
-                      <th>Temperatura</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <td><img src="./img/ba.png" style="height:18px; margin-top:-2px;"></td>
-                    <td>Bahia</td>
-                    <td>Barreira de corais</td>
-                    <td></td>
-                    <td>
-                      <div class="progress thin">
-                        <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="20"
-                          aria-valuemin="0" aria-valuemax="100" style="width: 20%">27C°
-                        </div>
-                        <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="80"
-                          aria-valuemin="0" aria-valuemax="100" style="width: 80%"> 24C°
-                        </div>
-                      </div>
-                      <span class="sr-only">20%</span>
-                    </td>
-                    </tr>
-                    <tr>
-                      <td><img src="img/alagoas.png" style="height:18px; margin-top:-2px;"></td>
-                      <td>Alagoas</td>
-                      <td>Barreira de maragogi</td>
-                      <td></td>
-                      <td>
-                        <div class="progress thin">
-                          <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="20"
-                            aria-valuemin="0" aria-valuemax="100" style="width: 20%"> 27C°
-                          </div>
-                          <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="80"
-                            aria-valuemin="0" aria-valuemax="100" style="width: 80%"> 24C°
-                          </div>
-                        </div>
-                        <span class="sr-only">20%</span>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td><img src="img/rn.png" style="height:18px; margin-top:-2px;"></td>
-                      <td>Rio grande do norte</td>
-                      <td>Barra de são miguel</td>
-                      <td></td>
-                      <td>
-                        <div class="progress thin">
-                          <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="20"
-                            aria-valuemin="0" aria-valuemax="100" style="width: 20%">27C°
-                          </div>
-                          <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="80"
-                            aria-valuemin="0" aria-valuemax="100" style="width: 80%">24C°
-                          </div>
-                        </div>
-                        <span class="sr-only">20%</span>
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-
-            </div>
-
-          </div>
-          <!-- Div do mapa -->
-          <div class="col-md-3">
-          </div>
-          <div class="col-md-3">
-          </div>
-
-          <div class="col-md-3">
-          </div>
-        </div>
-        <div class="row"> </div>
-        </div>
-        <!-- Botão para acionar modal -->
-        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalExemplo">
-          Abrir modal de demonstração
+      <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<!-- Modal -->
+<div class="modal fade" id="modalExemplo" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Título do modal</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+          <span aria-hidden="true">&times;</span>
         </button>
-
-
-
-
-
-      </section>
-      <div class="text-right">
-        <div class="credits">
-
-        </div>
       </div>
-    </section>
-
-  </section>
-  <div class="modal fade" id="centralModalSm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-
-    <!-- Change class .modal-sm to change the size of the modal -->
-    <div class="modal-dialog modal-sm" role="document">
-
-
-      <div class="modal-content">
-        <div class="modal-header">
-          <h4 class="modal-title w-100" id="myModalLabel">Modal title</h4>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-          ...
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary btn-sm">Save changes</button>
-        </div>
+      <div class="modal-body">
+        
+        <div id="chart_div" class="mapa1"></div>
+          </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+        <button type="button" class="btn btn-primary">Salvar mudanças</button>
       </div>
     </div>
   </div>
+</div>
+    </section>
+
+  </section>
+  
   <script src="js/jquery.js"></script>
   <script src="js/jquery-ui-1.10.4.min.js"></script>
   <script src="js/jquery-1.8.3.min.js"></script>
@@ -446,7 +296,44 @@
       });
     });
   </script>
+<script>
+google.charts.load('current', {packages: ['corechart', 'line']});
+google.charts.setOnLoadCallback(drawBasic);
 
+function drawBasic() {
+
+      var data = new google.visualization.DataTable();
+      data.addColumn('number', 'X');
+      data.addColumn('number', '');
+
+      data.addRows([
+        [0, 0],   [1, 10],  [2, 23],  [3, 17],  [4, 18],  [5, 9],
+        [6, 11],  [7, 27],  [8, 33],  [9, 40],  [10, 32], [11, 35],
+        [12, 30], [13, 40], [14, 42], [15, 47], [16, 44], [17, 48],
+        [18, 52], [19, 54], [20, 42], [21, 55], [22, 56], [23, 57],
+        [24, 60], [25, 50], [26, 52], [27, 51], [28, 49], [29, 53],
+        [30, 55], [31, 60], [32, 61], [33, 59], [34, 62], [35, 65],
+        [36, 62], [37, 58], [38, 55], [39, 61], [40, 64], [41, 65],
+        [42, 63], [43, 66], [44, 67], [45, 69], [46, 69], [47, 70],
+        [48, 72], [49, 68], [50, 66], [51, 65], [52, 67], [53, 70],
+        [54, 71], [55, 72], [56, 73], [57, 75], [58, 70], [59, 68],
+        [60, 64], [61, 60], [62, 65], [63, 67], [64, 68], [65, 69],
+        [66, 70], [67, 72], [68, 75], [69, 80]
+      ]);
+
+      var options = {
+        hAxis: {
+          title: 'Tempo'
+        },
+        vAxis: {
+          title: 'Temperatura'
+        }
+      };
+
+      var chart = new google.visualization.LineChart(document.getElementById('chart_div'));
+
+      chart.draw(data, options);
+    }
+</script>
 </body>
-
 </html>
