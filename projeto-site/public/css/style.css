@@ -9912,7 +9912,7 @@ span.customSelect.changed {
     margin-top: 270px;
     float: left;
     position: absolute;
-    z-index: 9999;
+    z-index: 1;
     margin-left: 320px;
 }
 
@@ -9924,7 +9924,7 @@ span.customSelect.changed {
     margin-top: 294px;
     float: left;
     position: absolute;
-    z-index: 9999;
+    z-index: 1;
     margin-left: 310px;
     text-decoration: none;
 }
@@ -9937,7 +9937,7 @@ span.customSelect.changed {
     margin-top: 282px;
     float: left;
     position: absolute;
-    z-index: 9999;
+    z-index: 1;
     margin-left: 314px;
 }
 
@@ -9957,3 +9957,16 @@ span.customSelect.changed {
 }
 
 
+.mapa-modal {
+    margin-top:5%;
+}
+
+.mapaModal {
+height: 200px;
+height: 200px;
+}
+
+.modal-body {
+    background-color: white;
+
+}
