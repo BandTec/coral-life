@@ -7,7 +7,7 @@
 */ 
 
 // se usar 'true' aqui, os dados serão gerados aleatórios e não recebidos da placa arduíno
-const gerar_dados_aleatorios = true; 
+const gerar_dados_aleatorios = false; 
 
 // leitura dos dados do Arduino
 var porta_serial = require('serialport');
@@ -63,7 +63,7 @@ function iniciar_escuta() {
                 // O Arduino deve enviar a temperatura e umidade de uma vez,
                 // separadas por ":" (temperatura : umidade)
                 var leitura = dados.split(':');
-                registrar_leitura(Number(leitura[0]), Number(leitura[1]));
+                registrar_leitura(Number(leitura[0]));
             } catch (e) {
                 throw new Error(`Erro ao tratar os dados recebidos do Arduino: ${e}`);
             }
@@ -76,12 +76,12 @@ function iniciar_escuta() {
 
 // função que recebe valores de temperatura e umidade
 // e faz um insert no banco de dados
-function registrar_leitura(temperatura, umidade) {
+function registrar_leitura(temperatura) {
 
     if (efetuando_insert) {
         console.log('Execução em curso. Aguardando 7s...');
         setTimeout(() => {
-            registrar_leitura(temperatura, umidade);
+            registrar_leitura(temperatura);
         }, 7000);
         return;
     }
@@ -89,14 +89,13 @@ function registrar_leitura(temperatura, umidade) {
     efetuando_insert = true;
 
     console.log(`temperatura: ${temperatura}`);
-    console.log(`umidade: ${umidade}`);
 
     banco.conectar().then(() => {
 
-        return banco.sql.query(`INSERT into leitura (temperatura, umidade, momento)
-                                values (${temperatura}, ${umidade}, CONVERT(Datetime, '${agora()}', 120));`);
+        return banco.sql.query(`INSERT into evento (temperaturaEvento, dataEvento, statusEvento, idDomo, estacaoEvento)
+                                values (${temperatura}, CONVERT(Datetime, '${agora()}', 120), 'teste', 1, 1);`);
 
-    }).catch(erro => {
+    }).catch(erro => { 
 
         console.error(`Erro ao tentar registrar aquisição na base: ${erro}`);
 
