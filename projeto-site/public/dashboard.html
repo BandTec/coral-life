@@ -2,743 +2,945 @@
 <html lang="en">
 
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Creative - Bootstrap 3 Responsive Admin Template">
-  <meta name="author" content="GeeksLabs">
-  <meta name="keyword" content="Creative, Dashboard, Admin, Template, Theme, Bootstrap, Responsive, Retina, Minimal">
-  <link rel="shortcut icon" href="img/favicon.png">
-  <title>Dashboard-Oceantec</title>
-  <link href="css/bootstrap.min.css" rel="stylesheet">
-  <link href="css/bootstrap-theme.css" rel="stylesheet">
-  <link href="css/elegant-icons-style.css" rel="stylesheet" />
-  <link href="css/font-awesome.min.css" rel="stylesheet" />
-  <link href="assets/fullcalendar/fullcalendar/bootstrap-fullcalendar.css" rel="stylesheet" />
-  <link href="assets/fullcalendar/fullcalendar/fullcalendar.css" rel="stylesheet" />
-  <link href="assets/jquery-easy-pie-chart/jquery.easy-pie-chart.css" rel="stylesheet" type="text/css" media="screen" />
-  <link rel="stylesheet" href="css/owl.carousel.css" type="text/css">
-  <link href="css/jquery-jvectormap-1.2.2.css" rel="stylesheet">
-  <link rel="stylesheet" href="css/fullcalendar.css">
-  <link href="css/widgets.css" rel="stylesheet">
-  <link href="css/style.css" rel="stylesheet">
-  <link href="css/style-responsive.css" rel="stylesheet" />
-  <link href="css/xcharts.min.css" rel=" stylesheet">
-  <link href="css/jquery-ui-1.10.4.min.css" rel="stylesheet">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Creative - Bootstrap 3 Responsive Admin Template">
+    <meta name="author" content="GeeksLabs">
+    <meta name="keyword" content="Creative, Dashboard, Admin, Template, Theme, Bootstrap, Responsive, Retina, Minimal">
+    <link rel="shortcut icon" href="img/favicon.png">
+    <title>Dashboard-Oceantec</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap-theme.css" rel="stylesheet">
+    <link href="css/elegant-icons-style.css" rel="stylesheet" />
+    <link href="css/font-awesome.min.css" rel="stylesheet" />
+    <link href="assets/fullcalendar/fullcalendar/bootstrap-fullcalendar.css" rel="stylesheet" />
+    <link href="assets/fullcalendar/fullcalendar/fullcalendar.css" rel="stylesheet" />
+    <link href="assets/jquery-easy-pie-chart/jquery.easy-pie-chart.css" rel="stylesheet" type="text/css" media="screen" />
+    <link rel="stylesheet" href="css/owl.carousel.css" type="text/css">
+    <link href="css/jquery-jvectormap-1.2.2.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/fullcalendar.css">
+    <link href="css/widgets.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/style-responsive.css" rel="stylesheet" />
+    <link href="css/xcharts.min.css" rel=" stylesheet">
+    <link href="css/jquery-ui-1.10.4.min.css" rel="stylesheet">
+    <script type="text/javascript" src="funcoes.js"></script>
+
 </head>
 
 <body>
-  <section id="container" class="">
+    <section id="container" class="">
 
-    <!-- barra superior -->
+        <!-- barra superior -->
 
-    <header class="header dark-bg">
-      <div class="toggle-nav">
-        <div class="icon-reorder tooltips" data-original-title="Toggle Navigation" data-placement="bottom"><i
-            class="icon_menu"></i></div>
-      </div>
-
-
-      <a href="index.html" class="logo">Coral <span class="lite">Life</span></a>
+        <header class="header dark-bg">
+            <div class="toggle-nav">
+                <div class="icon-reorder tooltips" data-original-title="Toggle Navigation" data-placement="bottom"><i class="icon_menu"></i></div>
+            </div>
 
 
-      <div class="nav search-row" id="top_menu">
+            <a href="index.html" class="logo">Coral <span class="lite">Life</span></a>
 
-        <ul class="nav top-menu">
-          <li>
-            <form class="navbar-form">
-              <input class="form-control" placeholder="Search" type="text">
-            </form>
-          </li>
-        </ul>
 
-      </div>
+            <div class="nav search-row" id="top_menu">
 
-      <div class="top-nav notification-row">
+                <ul class="nav top-menu">
+                    <li>
+                        <form class="navbar-form">
+                            <input class="form-control" placeholder="Search" type="text">
+                        </form>
+                    </li>
+                </ul>
 
-        <ul class="nav pull-right top-menu">
+            </div>
 
-          <!-- box de informações -->
-          <li id="task_notificatoin_bar" class="dropdown">
-            <a data-toggle="dropdown" class="dropdown-toggle" href="#">
-              <i class="icon-task-l"></i>
-              <span class="badge bg-important">6</span>
-            </a>
-            <ul class="dropdown-menu extended tasks-bar">
-              <div class="notify-arrow notify-arrow-blue"></div>
-              <li>
-                <p class="blue">Suas atualizações</p>
-              </li>
-              <li>
-                <a href="#">
-                  <div class="task-info">
-                    <div class="desc">Estatisticas anuais</div>
-                    <div class="percent">90%</div>
-                  </div>
-                  <div class="progress progress-striped">
-                    <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="90"
-                      aria-valuemin="0" aria-valuemax="100" style="width: 90%">
-                      <span class="sr-only">90% Completo</span>
-                    </div>
-                  </div>
-                </a>
-              </li>
-              <li>
-                <a href="#">
-                  <div class="task-info">
-                    <div class="desc">
-                      Estatistica Diaria
-                    </div>
-                    <div class="percent">30%</div>
-                  </div>
-                  <div class="progress progress-striped">
-                    <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="30"
-                      aria-valuemin="0" aria-valuemax="100" style="width: 30%">
-                      <span class="sr-only">30% Complete (warning)</span>
-                    </div>
-                  </div>
-                </a>
-              </li>
-              <li class="external">
-                <a href="#"></a>
-              </li>
-            </ul>
-          </li>
+            <div class="top-nav notification-row">
 
-          <li id="mail_notificatoin_bar" class="dropdown">
-            <a data-toggle="dropdown" class="dropdown-toggle" href="#">
-              <i class="icon-envelope-l"></i>
-              <span class="badge bg-important">5</span>
-            </a>
-            <ul class="dropdown-menu extended inbox">
-              <div class="notify-arrow notify-arrow-blue"></div>
-              <li>
-                <p class="blue">Você possui 5 mensagens</p>
-              </li>
-              <li>
-                <a href="#">Ver mensagens</a>
-              </li>
-            </ul>
-          </li>
-          <li id="alert_notificatoin_bar" class="dropdown">
-            <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                <ul class="nav pull-right top-menu">
 
-              <i class="icon-bell-l"></i>
-              <span class="badge bg-important">7</span>
-            </a>
-            <ul class="dropdown-menu extended notification">
-              <div class="notify-arrow notify-arrow-blue"></div>
-              <li>
-                <a href="#">Ver notificações</a>
-              </li>
-            </ul>
-          </li>
-          <li class="dropdown">
-            <a data-toggle="dropdown" class="dropdown-toggle" href="#">
-              <span class="profile-ava">
+                    <!-- box de informações -->
+                    <li id="task_notificatoin_bar" class="dropdown">
+                        <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                            <i class="icon-task-l"></i>
+                            <span class="badge bg-important">6</span>
+                        </a>
+                        <ul class="dropdown-menu extended tasks-bar">
+                            <div class="notify-arrow notify-arrow-blue"></div>
+                            <li>
+                                <p class="blue">Suas atualizações</p>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <div class="task-info">
+                                        <div class="desc">Estatisticas anuais</div>
+                                        <div class="percent">90%</div>
+                                    </div>
+                                    <div class="progress progress-striped">
+                                        <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" style="width: 90%">
+                                            <span class="sr-only">90% Completo</span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <div class="task-info">
+                                        <div class="desc">
+                                            Estatistica Diaria
+                                        </div>
+                                        <div class="percent">30%</div>
+                                    </div>
+                                    <div class="progress progress-striped">
+                                        <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" style="width: 30%">
+                                            <span class="sr-only">30% Complete (warning)</span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="external">
+                                <a href="#"></a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li id="mail_notificatoin_bar" class="dropdown">
+                        <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                            <i class="icon-envelope-l"></i>
+                            <span class="badge bg-important">5</span>
+                        </a>
+                        <ul class="dropdown-menu extended inbox">
+                            <div class="notify-arrow notify-arrow-blue"></div>
+                            <li>
+                                <p class="blue">Você possui 5 mensagens</p>
+                            </li>
+                            <li>
+                                <a href="#">Ver mensagens</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li id="alert_notificatoin_bar" class="dropdown">
+                        <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+
+                            <i class="icon-bell-l"></i>
+                            <span class="badge bg-important">7</span>
+                        </a>
+                        <ul class="dropdown-menu extended notification">
+                            <div class="notify-arrow notify-arrow-blue"></div>
+                            <li>
+                                <a href="#">Ver notificações</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                            <span class="profile-ava">
                 <img alt="" src="img/avatar2.png" width=40 height=40>
-              </span>
-              <span class="username">Usuario</span>
-              <b class="caret"></b>
-            </a>
-            <ul class="dropdown-menu extended logout">
-              <div class="log-arrow-up"></div>
-              <li class="eborder-top">
-                <a href="#"><i class="icon_profile"></i> Meu perfil</a>
-              </li>
-              <li>
-                <a href="#"><i class="icon_mail_alt"></i> Caixa de email</a>
-              </li>
-              <li>
-                <a href="./homeInst.html"><i class="icon_key_alt"></i>Sair</a>
-              </li>
-            </ul>
-          </li>
-        </ul>
-      </div>
-    </header>
-    <!-- Menu lateral -->
-    <aside>
-      <div id="sidebar" class="nav-collapse ">
-
-        <ul class="sidebar-menu">
-          <li class="active">
-            <a class="" href="dashboard.html">
-              <i class="icon_house_alt"></i>
-              <span>Dashboard</span>
-            </a>
-          </li>
-          <li class="sub-menu">
-            <a href="javascript:;" class="">
-              <i class="icon_document_alt"></i>
-              <span>Relatorio</span>
-              <span class="menu-arrow arrow_carrot-right"></span>
-            </a>
-          </li>
-          <li class="sub-menu">
-            <a href="./chart-chartjs.html" class="">
-              <i class="icon_desktop"></i>
-              <span>Estatisticas</span>
-              <span class="menu-arrow arrow_carrot-right"></span>
-            </a>
-            <ul class="sub">
-            </ul>
-          </li>
-          </li>
-        </ul>
-
-      </div>
-    </aside>
-    <!-- Mapa central -->
-    <section id="main-content">
-      <section class="wrapper">
-
-        <div class="row">
-        </div>
-        <div class="row">
-          <div class="col-lg-9 col-md-12">
-
-            <div class="panel panel-default">
-              <div class="panel-heading">
-                <h2><i class="fa fa-map-marker red"></i><strong>Localização Domos</strong></h2>
-                <div class="panel-actions">
-                  <a href="index.html#" class="btn-setting"><i class="fa fa-rotate-right"></i></a>
-                  <a href="index.html#" class="btn-minimize"><i class="fa fa-chevron-up"></i></a>
-                  <a href="index.html#" class="btn-close"><i class="fa fa-times"></i></a>
-                </div>
-              </div>
-              <div class="panel-body-map">
-                <div id="map" style="height:400px;color: rgb(11, 80, 80)">
-                  <!--Botão modal-->
-                  <button type="button" class="bolinha1" data-toggle="modal" data-target="#centralModalSm1">
-                  </button>
-                  <button type="button" class="bolinha2" data-toggle="modal" data-target="#centralModalSm2">
-                  </button>
-                  <button type="button" class="bolinha3" data-toggle="modal" data-target="#centralModalSm3">
-                  </button>
-                </div>
-              </div>
+                <b id="b_usuario"></b>
+             
+                            <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu extended logout">
+                            <div class="log-arrow-up"></div>
+                            <li class="eborder-top">
+                                <a href="#"><i class="icon_profile"></i> Meu perfil</a>
+                            </li>
+                            <li>
+                                <a href="#"><i class="icon_mail_alt"></i> Caixa de email</a>
+                            </li>
+                            <li>
+                                <a onclick="logoff()"><i class="icon_key_alt"></i>Sair</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
             </div>
-          </div>
+        </header>
+        <!-- Menu lateral -->
+        <aside>
+            <div id="sidebar" class="nav-collapse ">
 
-
-          <div class="col-md-3">
-            <!-- graficos gerais lateral -->
-            <ul class="today-datas">
-              <li>
-                <div><span id="todayspark4" class="spark"></span></div>
-                <div class="datas-text">Media/estação</div>
-              </li>
-              <li>
-                <div><span id="todayspark5" class="spark"></span></div>
-                <div class="datas-text">Temperatura diaria</div>
-              </li>
-            </ul>
-          </div>
-        </div>
-        <!-- Caixa de informação -->
-        <div class="row">
-
-          <div class="col-lg-9 col-md-12">
-            <div class="panel panel-default">
-              <div class="panel-heading">
-                <h2><i class="fa fa-flag-o red"></i><strong>Registro</strong></h2>
-                <div class="panel-actions">
-                  <a href="index.html#" class="btn-setting"><i class="fa fa-rotate-right"></i></a>
-                  <a href="index.html#" class="btn-minimize"><i class="fa fa-chevron-up"></i></a>
-                  <a href="index.html#" class="btn-close"><i class="fa fa-times"></i></a>
-                </div>
-              </div>
-              <div class="panel-body">
-                <table class="table bootstrap-datatable countries">
-                  <thead>
-                    <tr>
-                      <th></th>
-                      <th>Localização</th>
-                      <th>Nome</th>
-                      <th></th>
-                      <th>Temperatura</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <td><img src="./img/ba.png" style="height:18px; margin-top:-2px;"></td>
-                    <td>Bahia</td>
-                    <td>Barreira de corais</td>
-                    <td></td>
-                    <td>
-                      <div class="progress thin">
-                        <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="20"
-                          aria-valuemin="0" aria-valuemax="100" style="width: 20%">27C°
-                        </div>
-                        <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="80"
-                          aria-valuemin="0" aria-valuemax="100" style="width: 80%"> 24C°
-                        </div>
-                      </div>
-                      <span class="sr-only">20%</span>
-                    </td>
-                    </tr>
-                    <tr>
-                      <td><img src="img/alagoas.png" style="height:18px; margin-top:-2px;"></td>
-                      <td>Alagoas</td>
-                      <td>Barreira de maragogi</td>
-                      <td></td>
-                      <td>
-                        <div class="progress thin">
-                          <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="20"
-                            aria-valuemin="0" aria-valuemax="100" style="width: 20%"> 27C°
-                          </div>
-                          <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="80"
-                            aria-valuemin="0" aria-valuemax="100" style="width: 80%"> 24C°
-                          </div>
-                        </div>
-                        <span class="sr-only">20%</span>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td><img src="img/rn.png" style="height:18px; margin-top:-2px;"></td>
-                      <td>Rio grande do norte</td>
-                      <td>Barra de são miguel</td>
-                      <td></td>
-                      <td>
-                        <div class="progress thin">
-                          <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="20"
-                            aria-valuemin="0" aria-valuemax="100" style="width: 20%">27C°
-                          </div>
-                          <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="80"
-                            aria-valuemin="0" aria-valuemax="100" style="width: 80%">24C°
-                          </div>
-                        </div>
-                        <span class="sr-only">20%</span>
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
+                <ul class="sidebar-menu">
+                    <li class="active">
+                        <a class="" href="dashboard.html">
+                            <i class="icon_house_alt"></i>
+                            <span>Dashboard</span>
+                        </a>
+                    </li>
+                    <li class="sub-menu">
+                        <a href="javascript:;" class="">
+                            <i class="icon_document_alt"></i>
+                            <span>Relatorio</span>
+                            <span class="menu-arrow arrow_carrot-right"></span>
+                        </a>
+                    </li>
+                    <li class="sub-menu">
+                        <a href="./chart-chartjs.html" class="">
+                            <i class="icon_desktop"></i>
+                            <span>Estatisticas</span>
+                            <span class="menu-arrow arrow_carrot-right"></span>
+                        </a>
+                        <ul class="sub">
+                        </ul>
+                    </li>
+                    </li>
+                </ul>
 
             </div>
+            </aside>
+            <!-- Mapa central -->
+            <section id="main-content">
+                <section class="wrapper">
 
-          </div>
-          <div class="col-md-3">
-          </div>
-          <div class="col-md-3">
-          </div>
+                    <div class="row">
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-9 col-md-12">
 
-          <div class="col-md-3">
-          </div>
-        </div>
-        <div class="row"> </div>
-        </div>
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h2><i class="fa fa-map-marker red"></i><strong>Localização Domos</strong></h2>
+                                    <div class="panel-actions">
+                                        <a href="index.html#" class="btn-setting"><i class="fa fa-rotate-right"></i></a>
+                                        <a href="index.html#" class="btn-minimize"><i class="fa fa-chevron-up"></i></a>
+                                        <a href="index.html#" class="btn-close"><i class="fa fa-times"></i></a>
+                                    </div>
+                                </div>
+                                <div class="panel-body-map" a>
+                                    <div id="map" style="height:400px;color: rgb(11, 80, 80)">
+                                        <!--Botão modal-->
+                                        <button type="button" class="bolinha1" data-toggle="modal" data-target="#centralModalSm1">
+                  </button>
+                                        <button type="button" class="bolinha2" data-toggle="modal" data-target="#centralModalSm2">
+                  </button>
+                                        <button type="button" class="bolinha3" data-toggle="modal" data-target="#centralModalSm3">
+                  </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
 
-      </section>
-      <div class="text-right">
-        <div class="credits">
 
-        </div>
-      </div>
+                        <div class="col-md-3">
+                            <!-- graficos gerais lateral -->
+                            <ul class="today-datas">
+                                <li>
+                                    <div><span id="todayspark4" class="spark"></span></div>
+                                    <div class="datas-text">Media/estação</div>
+                                </li>
+                                <li>
+                                    <div><span id="todayspark5" class="spark"></span></div>
+                                    <div class="datas-text">Temperatura diaria</div>
+                                </li>
+
+                                <li>
+
+                        </div>
+                        Seu token
+                        <div class="datas-text" id="token_user" style="font-size: 20px; color: red;"></div>
+                        </li>
+                        </ul>
+                    </div>
+                    </div>
+                    <!-- Caixa de informação -->
+                    <div class="row">
+
+                        <div class="col-lg-9 col-md-12">
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h2><i class="fa fa-flag-o red"></i><strong>Registro</strong></h2>
+                                    <div class="panel-actions">
+                                        <a href="index.html#" class="btn-setting"><i class="fa fa-rotate-right"></i></a>
+                                        <a href="index.html#" class="btn-minimize"><i class="fa fa-chevron-up"></i></a>
+                                        <a href="index.html#" class="btn-close"><i class="fa fa-times"></i></a>
+                                    </div>
+                                </div>
+                                <div class="panel-body">
+                                    <table class="table bootstrap-datatable countries">
+                                        <thead>
+                                            <tr>
+                                                <th></th>
+                                                <th>Localização</th>
+                                                <th>Nome</th>
+                                                <th></th>
+                                                <th>Temperatura</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <td><img src="./img/ba.png" style="height:18px; margin-top:-2px;"></td>
+                                            <td>Bahia</td>
+                                            <td>Barreira de corais</td>
+                                            <td></td>
+                                            <td>
+                                                <div class="progress thin">
+                                                    <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 20%">27C°
+                                                    </div>
+                                                    <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%"> 24C°
+                                                    </div>
+                                                </div>
+                                                <span class="sr-only">20%</span>
+                                            </td>
+                                            </tr>
+                                            <tr>
+                                                <td><img src="img/alagoas.png" style="height:18px; margin-top:-2px;"></td>
+                                                <td>Alagoas</td>
+                                                <td>Barreira de maragogi</td>
+                                                <td></td>
+                                                <td>
+                                                    <div class="progress thin">
+                                                        <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 20%"> 27C°
+                                                        </div>
+                                                        <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%"> 24C°
+                                                        </div>
+                                                    </div>
+                                                    <span class="sr-only">20%</span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td><img src="img/rn.png" style="height:18px; margin-top:-2px;"></td>
+                                                <td>Rio grande do norte</td>
+                                                <td>Barra de são miguel</td>
+                                                <td></td>
+                                                <td>
+                                                    <div class="progress thin">
+                                                        <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 20%">27C°
+                                                        </div>
+                                                        <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%">24C°
+                                                        </div>
+                                                    </div>
+                                                    <span class="sr-only">20%</span>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+
+                            </div>
+
+                        </div>
+                        <div class="col-md-3">
+                        </div>
+                        <div class="col-md-3">
+                        </div>
+
+                        <div class="col-md-3">
+                        </div>
+                    </div>
+                    <div class="row"> </div>
+                    </div>
+
+                </section>
+                <div class="text-right">
+                    <div class="credits">
+
+                    </div>
+                </div>
+            </section>
     </section>
-  </section>
 
-  <!--Modal-->
-  <div class="modal fade" id="centralModalSm1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
-    aria-hidden="true">
-    <div class="modal-dialog modal-sm" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h4 class="modal-title w-100" id="myModalLabel">Dashboard Rio Grande do Norte-RN</h4>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+
+    <!--Modal-->
+    <div class="modal fade" id="centralModalSm1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-sm" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title w-100" id="myModalLabel">Dashboard Rio Grande do Norte-RN</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
+                </div>
+                <div class="modal-body">
+                    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js" class="mapa-modal"></script>
+                    <div id="chart_divA" style="width: 900px; height: 500px;" class="mapaModal"></div>
+                    <div id="chart_div1"></div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">Fechar</button>
+                    <button type="button" class="btn btn-primary btn-sm">Salvar</button>
+                </div>
+            </div>
         </div>
-        <div class="modal-body">
-          <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js" class="mapa-modal"></script>
-          <div id="chart_divA" style="width: 900px; height: 500px;" class="mapaModal"></div>
-          <div id="chart_div1"></div>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">Fechar</button>
-          <button type="button" class="btn btn-primary btn-sm">Salvar</button>
-        </div>
-      </div>
     </div>
-  </div>
 
-  <div class="modal fade" id="centralModalSm2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
-    aria-hidden="true">
-    <div class="modal-dialog modal-sm" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h4 class="modal-title w-100" id="myModalLabel">Dashboard Bahia-BA</h4>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+    <div class="modal fade" id="centralModalSm2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-sm" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title w-100" id="myModalLabel">Dashboard Bahia-BA</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
+                </div>
+                <div class="modal-body">
+                    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js" class="mapa-modal"></script>
+                    <div id="chart_divB" style="width: 900px; height: 500px;"></div>
+                    <div id="chart_div2"></div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">Fechar</button>
+                    <button type="button" class="btn btn-primary btn-sm">Salvar</button>
+                </div>
+            </div>
         </div>
-        <div class="modal-body">
-          <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js" class="mapa-modal"></script>
-          <div id="chart_divB" style="width: 900px; height: 500px;"></div>
-          <div id="chart_div2"></div>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">Fechar</button>
-          <button type="button" class="btn btn-primary btn-sm">Salvar</button>
-        </div>
-      </div>
     </div>
-  </div>
 
-  <div class="modal fade" id="centralModalSm3" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
-    aria-hidden="true">
-    <div class="modal-dialog modal-sm" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h4 class="modal-title w-100" id="myModalLabel">Dashboard Alagoas-AL</h4>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+    <div class="modal fade" id="centralModalSm3" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-sm" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title w-100" id="myModalLabel">Dashboard Alagoas-AL</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
+                </div>
+                <div class="modal-body">
+                    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js" class="mapa-modal"></script>
+                    <div id="chart_divC" style="width: 900px; height: 500px;"></div>
+                    <div id="chart_div3"></div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">Fechar</button>
+                    <button type="button" class="btn btn-primary btn-sm">Salvar</button>
+                </div>
+            </div>
         </div>
-        <div class="modal-body">
-          <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js" class="mapa-modal"></script>
-          <div id="chart_divC" style="width: 900px; height: 500px;"></div>
-          <div id="chart_div3"></div>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">Fechar</button>
-          <button type="button" class="btn btn-primary btn-sm">Salvar</button>
-        </div>
-      </div>
     </div>
-  </div>
-  <script src="js/jquery.js"></script>
-  <script src="js/jquery-ui-1.10.4.min.js"></script>
-  <script src="js/jquery-1.8.3.min.js"></script>
-  <script type="text/javascript" src="js/jquery-ui-1.9.2.custom.min.js"></script>
-  <script src="js/bootstrap.min.js"></script>
-  <script src="js/jquery.scrollTo.min.js"></script>
-  <script src="js/jquery.nicescroll.js" type="text/javascript"></script>
-  <script src="assets/jquery-knob/js/jquery.knob.js"></script>
-  <script src="js/jquery.sparkline.js" type="text/javascript"></script>
-  <script src="assets/jquery-easy-pie-chart/jquery.easy-pie-chart.js"></script>
-  <script src="js/owl.carousel.js"></script>
-  <script src="js/fullcalendar.min.js"></script>
-  <script src="assets/fullcalendar/fullcalendar/fullcalendar.js"></script>
+    <script src="js/jquery.js"></script>
+    <script src="js/jquery-ui-1.10.4.min.js"></script>
+    <script src="js/jquery-1.8.3.min.js"></script>
+    <script type="text/javascript" src="js/jquery-ui-1.9.2.custom.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.scrollTo.min.js"></script>
+    <script src="js/jquery.nicescroll.js" type="text/javascript"></script>
+    <script src="assets/jquery-knob/js/jquery.knob.js"></script>
+    <script src="js/jquery.sparkline.js" type="text/javascript"></script>
+    <script src="assets/jquery-easy-pie-chart/jquery.easy-pie-chart.js"></script>
+    <script src="js/owl.carousel.js"></script>
+    <script src="js/fullcalendar.min.js"></script>
+    <script src="assets/fullcalendar/fullcalendar/fullcalendar.js"></script>
 
-  <script src="js/calendar-custom.js"></script>
-  <script src="js/jquery.rateit.min.js"></script>
+    <script src="js/calendar-custom.js"></script>
+    <script src="js/jquery.rateit.min.js"></script>
 
-  <script src="js/jquery.customSelect.min.js"></script>
-  <script src="assets/chart-master/Chart.js"></script>
-  <script src="js/scripts.js"></script>
-  <!-- Script da pagina-->
-  <script src="js/sparkline-chart.js"></script>
-  <script src="js/easy-pie-chart.js"></script>
-  <script src="js/jquery-jvectormap-1.2.2.min.js"></script>
-  <script src="js/jquery-jvectormap-world-mill-en.js"></script>
-  <script src="js/xcharts.min.js"></script>
-  <script src="js/jquery.autosize.min.js"></script>
-  <script src="js/jquery.placeholder.min.js"></script>
-  <script src="js/gdp-data.js"></script>
-  <script src="js/morris.min.js"></script>
-  <script src="js/sparklines.js"></script>
-  <script src="js/charts.js"></script>
-  <script src="js/jquery.slimscroll.min.js"></script>
-  <script>
-    $(function () {
-      $(".knob").knob({
-        'draw': function () {
-          $(this.i).val(this.cv + '%')
+    <script src="js/jquery.customSelect.min.js"></script>
+    <script src="assets/chart-master/Chart.js"></script>
+    <script src="js/scripts.js"></script>
+    <!-- Script da pagina-->
+    <script src="js/sparkline-chart.js"></script>
+    <script src="js/easy-pie-chart.js"></script>
+    <script src="js/jquery-jvectormap-1.2.2.min.js"></script>
+    <script src="js/jquery-jvectormap-world-mill-en.js"></script>
+    <script src="js/xcharts.min.js"></script>
+    <script src="js/jquery.autosize.min.js"></script>
+    <script src="js/jquery.placeholder.min.js"></script>
+    <script src="js/gdp-data.js"></script>
+    <script src="js/morris.min.js"></script>
+    <script src="js/sparklines.js"></script>
+    <script src="js/charts.js"></script>
+    <script src="js/jquery.slimscroll.min.js"></script>
+    <script>
+        $(function() {
+            $(".knob").knob({
+                'draw': function() {
+                    $(this.i).val(this.cv + '%')
+                }
+            })
+        });
+
+        $(document).ready(function() {
+            $("#owl-slider").owlCarousel({
+                navigation: true,
+                slideSpeed: 300,
+                paginationSpeed: 400,
+                singleItem: true
+
+            });
+        });
+
+
+        $(function() {
+            $('select.styled').customSelect();
+        });
+
+
+        $(function() {
+            $('#map').vectorMap({
+                map: 'world_mill_en',
+                series: {
+                    regions: [{
+                        values: gdpData,
+                        scale: ['#000', '#000'],
+                        normalizeFunction: 'polynomial'
+                    }]
+                },
+                backgroundColor: '#eef3f7',
+                onLabelShow: function(e, el, code) {
+                    el.html(el.html() + ' (GDP - ' + gdpData[code] + ')');
+                }
+            });
+        });
+    </script>
+    <script>
+        google.charts.load('current', {
+            packages: ['corechart', 'line']
+        });
+        google.charts.setOnLoadCallback(drawBasic);
+
+        function drawBasic() {
+
+            var data = new google.visualization.DataTable();
+            data.addColumn('number', 'X');
+            data.addColumn('number', '');
+
+            data.addRows([
+                [0, 0],
+                [1, 10],
+                [2, 23],
+                [3, 17],
+                [4, 18],
+                [5, 9],
+                [6, 11],
+                [7, 27],
+                [8, 33],
+                [9, 40],
+                [10, 32],
+                [11, 35],
+                [12, 30],
+                [13, 40],
+                [14, 42],
+                [15, 47],
+                [16, 44],
+                [17, 48],
+                [18, 52],
+                [19, 54],
+                [20, 42],
+                [21, 55],
+                [22, 56],
+                [23, 57],
+                [24, 60],
+                [25, 50],
+                [26, 52],
+                [27, 51],
+                [28, 49],
+                [29, 53],
+                [30, 55],
+                [31, 60],
+                [32, 61],
+                [33, 59],
+                [34, 62],
+                [35, 65],
+                [36, 62],
+                [37, 58],
+                [38, 55],
+                [39, 61],
+                [40, 64],
+                [41, 65],
+                [42, 63],
+                [43, 66],
+                [44, 67],
+                [45, 69],
+                [46, 69],
+                [47, 70],
+                [48, 72],
+                [49, 68],
+                [50, 66],
+                [51, 65],
+                [52, 67],
+                [53, 70],
+                [54, 71],
+                [55, 72],
+                [56, 73],
+                [57, 75],
+                [58, 70],
+                [59, 68],
+                [60, 64],
+                [61, 60],
+                [62, 65],
+                [63, 67],
+                [64, 68],
+                [65, 69],
+                [66, 70],
+                [67, 72],
+                [68, 75],
+                [69, 80]
+            ]);
+
+            var options = {
+                hAxis: {
+                    title: 'Tempo'
+                },
+                vAxis: {
+                    title: 'Temperatura'
+                }
+            };
+
+            var chart = new google.visualization.LineChart(document.getElementById('chart_div1'));
+
+            chart.draw(data, options);
         }
-      })
-    });
+    </script>
 
-    $(document).ready(function () {
-      $("#owl-slider").owlCarousel({
-        navigation: true,
-        slideSpeed: 300,
-        paginationSpeed: 400,
-        singleItem: true
+    <script>
+        google.charts.load('current', {
+            packages: ['corechart', 'line']
+        });
+        google.charts.setOnLoadCallback(drawBasic);
 
-      });
-    });
+        function drawBasic() {
 
+            var data = new google.visualization.DataTable();
+            data.addColumn('number', 'X');
+            data.addColumn('number', '');
 
-    $(function () {
-      $('select.styled').customSelect();
-    });
+            data.addRows([
+                [0, 0],
+                [1, 10],
+                [2, 23],
+                [3, 17],
+                [4, 18],
+                [5, 9],
+                [6, 11],
+                [7, 27],
+                [8, 33],
+                [9, 40],
+                [10, 32],
+                [11, 35],
+                [12, 30],
+                [13, 40],
+                [14, 42],
+                [15, 47],
+                [16, 44],
+                [17, 48],
+                [18, 52],
+                [19, 54],
+                [20, 42],
+                [21, 55],
+                [22, 56],
+                [23, 57],
+                [24, 60],
+                [25, 50],
+                [26, 52],
+                [27, 51],
+                [28, 49],
+                [29, 53],
+                [30, 55],
+                [31, 60],
+                [32, 61],
+                [33, 59],
+                [34, 62],
+                [35, 65],
+                [36, 62],
+                [37, 58],
+                [38, 55],
+                [39, 61],
+                [40, 64],
+                [41, 65],
+                [42, 63],
+                [43, 66],
+                [44, 67],
+                [45, 69],
+                [46, 69],
+                [47, 70],
+                [48, 72],
+                [49, 68],
+                [50, 66],
+                [51, 65],
+                [52, 67],
+                [53, 70],
+                [54, 71],
+                [55, 72],
+                [56, 73],
+                [57, 75],
+                [58, 70],
+                [59, 68],
+                [60, 64],
+                [61, 60],
+                [62, 65],
+                [63, 67],
+                [64, 68],
+                [65, 69],
+                [66, 70],
+                [67, 72],
+                [68, 75],
+                [69, 80]
+            ]);
 
+            var options = {
+                hAxis: {
+                    title: 'Tempo'
+                },
+                vAxis: {
+                    title: 'Temperatura'
+                }
+            };
 
-    $(function () {
-      $('#map').vectorMap({
-        map: 'world_mill_en',
-        series: {
-          regions: [{
-            values: gdpData,
-            scale: ['#000', '#000'],
-            normalizeFunction: 'polynomial'
-          }]
-        },
-        backgroundColor: '#eef3f7',
-        onLabelShow: function (e, el, code) {
-          el.html(el.html() + ' (GDP - ' + gdpData[code] + ')');
+            var chart = new google.visualization.LineChart(document.getElementById('chart_div2'));
+
+            chart.draw(data, options);
         }
-      });
-    });
-  </script>
-  <script>
-    google.charts.load('current', { packages: ['corechart', 'line'] });
-    google.charts.setOnLoadCallback(drawBasic);
+    </script>
 
-    function drawBasic() {
+    <script>
+        google.charts.load('current', {
+            packages: ['corechart', 'line']
+        });
+        google.charts.setOnLoadCallback(drawBasic);
 
-      var data = new google.visualization.DataTable();
-      data.addColumn('number', 'X');
-      data.addColumn('number', '');
+        function drawBasic() {
 
-      data.addRows([
-        [0, 0], [1, 10], [2, 23], [3, 17], [4, 18], [5, 9],
-        [6, 11], [7, 27], [8, 33], [9, 40], [10, 32], [11, 35],
-        [12, 30], [13, 40], [14, 42], [15, 47], [16, 44], [17, 48],
-        [18, 52], [19, 54], [20, 42], [21, 55], [22, 56], [23, 57],
-        [24, 60], [25, 50], [26, 52], [27, 51], [28, 49], [29, 53],
-        [30, 55], [31, 60], [32, 61], [33, 59], [34, 62], [35, 65],
-        [36, 62], [37, 58], [38, 55], [39, 61], [40, 64], [41, 65],
-        [42, 63], [43, 66], [44, 67], [45, 69], [46, 69], [47, 70],
-        [48, 72], [49, 68], [50, 66], [51, 65], [52, 67], [53, 70],
-        [54, 71], [55, 72], [56, 73], [57, 75], [58, 70], [59, 68],
-        [60, 64], [61, 60], [62, 65], [63, 67], [64, 68], [65, 69],
-        [66, 70], [67, 72], [68, 75], [69, 80]
-      ]);
+            var data = new google.visualization.DataTable();
+            data.addColumn('number', 'X');
+            data.addColumn('number', '');
 
-      var options = {
-        hAxis: {
-          title: 'Tempo'
-        },
-        vAxis: {
-          title: 'Temperatura'
+            data.addRows([
+                [0, 0],
+                [1, 10],
+                [2, 23],
+                [3, 17],
+                [4, 18],
+                [5, 9],
+                [6, 11],
+                [7, 27],
+                [8, 33],
+                [9, 40],
+                [10, 32],
+                [11, 35],
+                [12, 30],
+                [13, 40],
+                [14, 42],
+                [15, 47],
+                [16, 44],
+                [17, 48],
+                [18, 52],
+                [19, 54],
+                [20, 42],
+                [21, 55],
+                [22, 56],
+                [23, 57],
+                [24, 60],
+                [25, 50],
+                [26, 52],
+                [27, 51],
+                [28, 49],
+                [29, 53],
+                [30, 55],
+                [31, 60],
+                [32, 61],
+                [33, 59],
+                [34, 62],
+                [35, 65],
+                [36, 62],
+                [37, 58],
+                [38, 55],
+                [39, 61],
+                [40, 64],
+                [41, 65],
+                [42, 63],
+                [43, 66],
+                [44, 67],
+                [45, 69],
+                [46, 69],
+                [47, 70],
+                [48, 72],
+                [49, 68],
+                [50, 66],
+                [51, 65],
+                [52, 67],
+                [53, 70],
+                [54, 71],
+                [55, 72],
+                [56, 73],
+                [57, 75],
+                [58, 70],
+                [59, 68],
+                [60, 64],
+                [61, 60],
+                [62, 65],
+                [63, 67],
+                [64, 68],
+                [65, 69],
+                [66, 70],
+                [67, 72],
+                [68, 75],
+                [69, 80]
+            ]);
+
+            var options = {
+                hAxis: {
+                    title: 'Tempo'
+                },
+                vAxis: {
+                    title: 'Temperatura'
+                }
+            };
+
+            var chart = new google.visualization.LineChart(document.getElementById('chart_div3'));
+
+            chart.draw(data, options);
         }
-      };
+    </script>
 
-      var chart = new google.visualization.LineChart(document.getElementById('chart_div1'));
 
-      chart.draw(data, options);
-    }
-  </script>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+        google.charts.load("current", {
+            packages: ["corechart"]
+        });
+        google.charts.setOnLoadCallback(drawChart);
 
-  <script>
-    google.charts.load('current', { packages: ['corechart', 'line'] });
-    google.charts.setOnLoadCallback(drawBasic);
+        function drawChart() {
+            var data = google.visualization.arrayToDataTable([
+                ['Dinosaur', 'Length'],
+                ['Acrocanthosaurus (top-spined lizard)', 12.2],
+                ['Albertosaurus (Alberta lizard)', 9.1],
+                ['Allosaurus (other lizard)', 12.2],
+                ['Apatosaurus (deceptive lizard)', 22.9],
+                ['Archaeopteryx (ancient wing)', 0.9],
+                ['Argentinosaurus (Argentina lizard)', 36.6],
+                ['Baryonyx (heavy claws)', 9.1],
+                ['Brachiosaurus (arm lizard)', 30.5],
+                ['Ceratosaurus (horned lizard)', 6.1],
+                ['Coelophysis (hollow form)', 2.7],
+                ['Compsognathus (elegant jaw)', 0.9],
+                ['Deinonychus (terrible claw)', 2.7],
+                ['Diplodocus (double beam)', 27.1],
+                ['Dromicelomimus (emu mimic)', 3.4],
+                ['Gallimimus (fowl mimic)', 5.5],
+                ['Mamenchisaurus (Mamenchi lizard)', 21.0],
+                ['Megalosaurus (big lizard)', 7.9],
+                ['Microvenator (small hunter)', 1.2],
+                ['Ornithomimus (bird mimic)', 4.6],
+                ['Oviraptor (egg robber)', 1.5],
+                ['Plateosaurus (flat lizard)', 7.9],
+                ['Sauronithoides (narrow-clawed lizard)', 2.0],
+                ['Seismosaurus (tremor lizard)', 45.7],
+                ['Spinosaurus (spiny lizard)', 12.2],
+                ['Supersaurus (super lizard)', 30.5],
+                ['Tyrannosaurus (tyrant lizard)', 15.2],
+                ['Ultrasaurus (ultra lizard)', 30.5],
+                ['Velociraptor (swift robber)', 1.8]
+            ]);
 
-    function drawBasic() {
+            var options = {
+                title: 'Lengths of dinosaurs, in meters',
+                legend: {
+                    position: 'none'
+                },
+            };
 
-      var data = new google.visualization.DataTable();
-      data.addColumn('number', 'X');
-      data.addColumn('number', '');
-
-      data.addRows([
-        [0, 0], [1, 10], [2, 23], [3, 17], [4, 18], [5, 9],
-        [6, 11], [7, 27], [8, 33], [9, 40], [10, 32], [11, 35],
-        [12, 30], [13, 40], [14, 42], [15, 47], [16, 44], [17, 48],
-        [18, 52], [19, 54], [20, 42], [21, 55], [22, 56], [23, 57],
-        [24, 60], [25, 50], [26, 52], [27, 51], [28, 49], [29, 53],
-        [30, 55], [31, 60], [32, 61], [33, 59], [34, 62], [35, 65],
-        [36, 62], [37, 58], [38, 55], [39, 61], [40, 64], [41, 65],
-        [42, 63], [43, 66], [44, 67], [45, 69], [46, 69], [47, 70],
-        [48, 72], [49, 68], [50, 66], [51, 65], [52, 67], [53, 70],
-        [54, 71], [55, 72], [56, 73], [57, 75], [58, 70], [59, 68],
-        [60, 64], [61, 60], [62, 65], [63, 67], [64, 68], [65, 69],
-        [66, 70], [67, 72], [68, 75], [69, 80]
-      ]);
-
-      var options = {
-        hAxis: {
-          title: 'Tempo'
-        },
-        vAxis: {
-          title: 'Temperatura'
+            var chart = new google.visualization.Histogram(document.getElementById('chart_divA'));
+            chart.draw(data, options);
         }
-      };
+    </script>
 
-      var chart = new google.visualization.LineChart(document.getElementById('chart_div2'));
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+        google.charts.load("current", {
+            packages: ["corechart"]
+        });
+        google.charts.setOnLoadCallback(drawChart);
 
-      chart.draw(data, options);
-    }
-  </script>
+        function drawChart() {
+            var data = google.visualization.arrayToDataTable([
+                ['Dinosaur', 'Length'],
+                ['Acrocanthosaurus (top-spined lizard)', 12.2],
+                ['Albertosaurus (Alberta lizard)', 9.1],
+                ['Allosaurus (other lizard)', 12.2],
+                ['Apatosaurus (deceptive lizard)', 22.9],
+                ['Archaeopteryx (ancient wing)', 0.9],
+                ['Argentinosaurus (Argentina lizard)', 36.6],
+                ['Baryonyx (heavy claws)', 9.1],
+                ['Brachiosaurus (arm lizard)', 30.5],
+                ['Ceratosaurus (horned lizard)', 6.1],
+                ['Coelophysis (hollow form)', 2.7],
+                ['Compsognathus (elegant jaw)', 0.9],
+                ['Deinonychus (terrible claw)', 2.7],
+                ['Diplodocus (double beam)', 27.1],
+                ['Dromicelomimus (emu mimic)', 3.4],
+                ['Gallimimus (fowl mimic)', 5.5],
+                ['Mamenchisaurus (Mamenchi lizard)', 21.0],
+                ['Megalosaurus (big lizard)', 7.9],
+                ['Microvenator (small hunter)', 1.2],
+                ['Ornithomimus (bird mimic)', 4.6],
+                ['Oviraptor (egg robber)', 1.5],
+                ['Plateosaurus (flat lizard)', 7.9],
+                ['Sauronithoides (narrow-clawed lizard)', 2.0],
+                ['Seismosaurus (tremor lizard)', 45.7],
+                ['Spinosaurus (spiny lizard)', 12.2],
+                ['Supersaurus (super lizard)', 30.5],
+                ['Tyrannosaurus (tyrant lizard)', 15.2],
+                ['Ultrasaurus (ultra lizard)', 30.5],
+                ['Velociraptor (swift robber)', 1.8]
+            ]);
 
-  <script>
-    google.charts.load('current', { packages: ['corechart', 'line'] });
-    google.charts.setOnLoadCallback(drawBasic);
+            var options = {
+                title: 'Lengths of dinosaurs, in meters',
+                legend: {
+                    position: 'none'
+                },
+            };
 
-    function drawBasic() {
-
-      var data = new google.visualization.DataTable();
-      data.addColumn('number', 'X');
-      data.addColumn('number', '');
-
-      data.addRows([
-        [0, 0], [1, 10], [2, 23], [3, 17], [4, 18], [5, 9],
-        [6, 11], [7, 27], [8, 33], [9, 40], [10, 32], [11, 35],
-        [12, 30], [13, 40], [14, 42], [15, 47], [16, 44], [17, 48],
-        [18, 52], [19, 54], [20, 42], [21, 55], [22, 56], [23, 57],
-        [24, 60], [25, 50], [26, 52], [27, 51], [28, 49], [29, 53],
-        [30, 55], [31, 60], [32, 61], [33, 59], [34, 62], [35, 65],
-        [36, 62], [37, 58], [38, 55], [39, 61], [40, 64], [41, 65],
-        [42, 63], [43, 66], [44, 67], [45, 69], [46, 69], [47, 70],
-        [48, 72], [49, 68], [50, 66], [51, 65], [52, 67], [53, 70],
-        [54, 71], [55, 72], [56, 73], [57, 75], [58, 70], [59, 68],
-        [60, 64], [61, 60], [62, 65], [63, 67], [64, 68], [65, 69],
-        [66, 70], [67, 72], [68, 75], [69, 80]
-      ]);
-
-      var options = {
-        hAxis: {
-          title: 'Tempo'
-        },
-        vAxis: {
-          title: 'Temperatura'
+            var chart = new google.visualization.Histogram(document.getElementById('chart_divB'));
+            chart.draw(data, options);
         }
-      };
+    </script>
 
-      var chart = new google.visualization.LineChart(document.getElementById('chart_div3'));
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+        google.charts.load("current", {
+            packages: ["corechart"]
+        });
+        google.charts.setOnLoadCallback(drawChart);
 
-      chart.draw(data, options);
-    }
-  </script>
+        function drawChart() {
+            var data = google.visualization.arrayToDataTable([
+                ['Dinosaur', 'Length'],
+                ['Acrocanthosaurus (top-spined lizard)', 12.2],
+                ['Albertosaurus (Alberta lizard)', 9.1],
+                ['Allosaurus (other lizard)', 12.2],
+                ['Apatosaurus (deceptive lizard)', 22.9],
+                ['Archaeopteryx (ancient wing)', 0.9],
+                ['Argentinosaurus (Argentina lizard)', 36.6],
+                ['Baryonyx (heavy claws)', 9.1],
+                ['Brachiosaurus (arm lizard)', 30.5],
+                ['Ceratosaurus (horned lizard)', 6.1],
+                ['Coelophysis (hollow form)', 2.7],
+                ['Compsognathus (elegant jaw)', 0.9],
+                ['Deinonychus (terrible claw)', 2.7],
+                ['Diplodocus (double beam)', 27.1],
+                ['Dromicelomimus (emu mimic)', 3.4],
+                ['Gallimimus (fowl mimic)', 5.5],
+                ['Mamenchisaurus (Mamenchi lizard)', 21.0],
+                ['Megalosaurus (big lizard)', 7.9],
+                ['Microvenator (small hunter)', 1.2],
+                ['Ornithomimus (bird mimic)', 4.6],
+                ['Oviraptor (egg robber)', 1.5],
+                ['Plateosaurus (flat lizard)', 7.9],
+                ['Sauronithoides (narrow-clawed lizard)', 2.0],
+                ['Seismosaurus (tremor lizard)', 45.7],
+                ['Spinosaurus (spiny lizard)', 12.2],
+                ['Supersaurus (super lizard)', 30.5],
+                ['Tyrannosaurus (tyrant lizard)', 15.2],
+                ['Ultrasaurus (ultra lizard)', 30.5],
+                ['Velociraptor (swift robber)', 1.8]
+            ]);
+
+            var options = {
+                title: 'Lengths of dinosaurs, in meters',
+                legend: {
+                    position: 'none'
+                },
+            };
+
+            var chart = new google.visualization.Histogram(document.getElementById('chart_divC'));
+            chart.draw(data, options);
+        }
+    </script>
+    <script>
+        verificar_autenticacao();
+    </script>
 
 
-<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-<script type="text/javascript">
-  google.charts.load("current", {packages:["corechart"]});
-  google.charts.setOnLoadCallback(drawChart);
-  function drawChart() {
-    var data = google.visualization.arrayToDataTable([
-      ['Dinosaur', 'Length'],
-      ['Acrocanthosaurus (top-spined lizard)', 12.2],
-      ['Albertosaurus (Alberta lizard)', 9.1],
-      ['Allosaurus (other lizard)', 12.2],
-      ['Apatosaurus (deceptive lizard)', 22.9],
-      ['Archaeopteryx (ancient wing)', 0.9],
-      ['Argentinosaurus (Argentina lizard)', 36.6],
-      ['Baryonyx (heavy claws)', 9.1],
-      ['Brachiosaurus (arm lizard)', 30.5],
-      ['Ceratosaurus (horned lizard)', 6.1],
-      ['Coelophysis (hollow form)', 2.7],
-      ['Compsognathus (elegant jaw)', 0.9],
-      ['Deinonychus (terrible claw)', 2.7],
-      ['Diplodocus (double beam)', 27.1],
-      ['Dromicelomimus (emu mimic)', 3.4],
-      ['Gallimimus (fowl mimic)', 5.5],
-      ['Mamenchisaurus (Mamenchi lizard)', 21.0],
-      ['Megalosaurus (big lizard)', 7.9],
-      ['Microvenator (small hunter)', 1.2],
-      ['Ornithomimus (bird mimic)', 4.6],
-      ['Oviraptor (egg robber)', 1.5],
-      ['Plateosaurus (flat lizard)', 7.9],
-      ['Sauronithoides (narrow-clawed lizard)', 2.0],
-      ['Seismosaurus (tremor lizard)', 45.7],
-      ['Spinosaurus (spiny lizard)', 12.2],
-      ['Supersaurus (super lizard)', 30.5],
-      ['Tyrannosaurus (tyrant lizard)', 15.2],
-      ['Ultrasaurus (ultra lizard)', 30.5],
-      ['Velociraptor (swift robber)', 1.8]]);
-
-    var options = {
-      title: 'Lengths of dinosaurs, in meters',
-      legend: { position: 'none' },
-    };
-
-    var chart = new google.visualization.Histogram(document.getElementById('chart_divA'));
-    chart.draw(data, options);
-  }
-</script>
-
-<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-<script type="text/javascript">
-  google.charts.load("current", {packages:["corechart"]});
-  google.charts.setOnLoadCallback(drawChart);
-  function drawChart() {
-    var data = google.visualization.arrayToDataTable([
-      ['Dinosaur', 'Length'],
-      ['Acrocanthosaurus (top-spined lizard)', 12.2],
-      ['Albertosaurus (Alberta lizard)', 9.1],
-      ['Allosaurus (other lizard)', 12.2],
-      ['Apatosaurus (deceptive lizard)', 22.9],
-      ['Archaeopteryx (ancient wing)', 0.9],
-      ['Argentinosaurus (Argentina lizard)', 36.6],
-      ['Baryonyx (heavy claws)', 9.1],
-      ['Brachiosaurus (arm lizard)', 30.5],
-      ['Ceratosaurus (horned lizard)', 6.1],
-      ['Coelophysis (hollow form)', 2.7],
-      ['Compsognathus (elegant jaw)', 0.9],
-      ['Deinonychus (terrible claw)', 2.7],
-      ['Diplodocus (double beam)', 27.1],
-      ['Dromicelomimus (emu mimic)', 3.4],
-      ['Gallimimus (fowl mimic)', 5.5],
-      ['Mamenchisaurus (Mamenchi lizard)', 21.0],
-      ['Megalosaurus (big lizard)', 7.9],
-      ['Microvenator (small hunter)', 1.2],
-      ['Ornithomimus (bird mimic)', 4.6],
-      ['Oviraptor (egg robber)', 1.5],
-      ['Plateosaurus (flat lizard)', 7.9],
-      ['Sauronithoides (narrow-clawed lizard)', 2.0],
-      ['Seismosaurus (tremor lizard)', 45.7],
-      ['Spinosaurus (spiny lizard)', 12.2],
-      ['Supersaurus (super lizard)', 30.5],
-      ['Tyrannosaurus (tyrant lizard)', 15.2],
-      ['Ultrasaurus (ultra lizard)', 30.5],
-      ['Velociraptor (swift robber)', 1.8]]);
-
-    var options = {
-      title: 'Lengths of dinosaurs, in meters',
-      legend: { position: 'none' },
-    };
-
-    var chart = new google.visualization.Histogram(document.getElementById('chart_divB'));
-    chart.draw(data, options);
-  }
-</script>
-
-<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-<script type="text/javascript">
-  google.charts.load("current", {packages:["corechart"]});
-  google.charts.setOnLoadCallback(drawChart);
-  function drawChart() {
-    var data = google.visualization.arrayToDataTable([
-      ['Dinosaur', 'Length'],
-      ['Acrocanthosaurus (top-spined lizard)', 12.2],
-      ['Albertosaurus (Alberta lizard)', 9.1],
-      ['Allosaurus (other lizard)', 12.2],
-      ['Apatosaurus (deceptive lizard)', 22.9],
-      ['Archaeopteryx (ancient wing)', 0.9],
-      ['Argentinosaurus (Argentina lizard)', 36.6],
-      ['Baryonyx (heavy claws)', 9.1],
-      ['Brachiosaurus (arm lizard)', 30.5],
-      ['Ceratosaurus (horned lizard)', 6.1],
-      ['Coelophysis (hollow form)', 2.7],
-      ['Compsognathus (elegant jaw)', 0.9],
-      ['Deinonychus (terrible claw)', 2.7],
-      ['Diplodocus (double beam)', 27.1],
-      ['Dromicelomimus (emu mimic)', 3.4],
-      ['Gallimimus (fowl mimic)', 5.5],
-      ['Mamenchisaurus (Mamenchi lizard)', 21.0],
-      ['Megalosaurus (big lizard)', 7.9],
-      ['Microvenator (small hunter)', 1.2],
-      ['Ornithomimus (bird mimic)', 4.6],
-      ['Oviraptor (egg robber)', 1.5],
-      ['Plateosaurus (flat lizard)', 7.9],
-      ['Sauronithoides (narrow-clawed lizard)', 2.0],
-      ['Seismosaurus (tremor lizard)', 45.7],
-      ['Spinosaurus (spiny lizard)', 12.2],
-      ['Supersaurus (super lizard)', 30.5],
-      ['Tyrannosaurus (tyrant lizard)', 15.2],
-      ['Ultrasaurus (ultra lizard)', 30.5],
-      ['Velociraptor (swift robber)', 1.8]]);
-
-    var options = {
-      title: 'Lengths of dinosaurs, in meters',
-      legend: { position: 'none' },
-    };
-
-    var chart = new google.visualization.Histogram(document.getElementById('chart_divC'));
-    chart.draw(data, options);
-  }
-</script>
 </body>
+
 
 </html>

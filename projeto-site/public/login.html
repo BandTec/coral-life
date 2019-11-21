@@ -2,149 +2,186 @@
 <html lang="en">
 
 <head>
-	<title>Entar-Oceantec</title>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<!--===============================================================================================-->
-	<link rel="icon" type="image/png" href="images/favicon.png" />
-	<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="vendorLogin/bootstrap/css/bootstrap.min.css">
-	<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="fontsLogin/font-awesome-4.7.0/css/font-awesome.min.css">
-	<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="fontsLogin/Linearicons-Free-v1.0.0/icon-font.min.css">
-	<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="vendorLogin/animate/animate.css">
-	<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="vendorLogin/css-hamburgers/hamburgers.min.css">
-	<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="vendorLogin/animsition/css/animsition.min.css">
-	<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="vendorLogin/select2/select2.min.css">
-	<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="vendorLogin/daterangepicker/daterangepicker.css">
-	<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="cssLogin/util.css">
-	<link rel="stylesheet" type="text/css" href="cssLogin/main.css">
+    <title>Entar-Oceantec</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--===============================================================================================-->
+    <link rel="icon" type="image/png" href="images/favicon.png" />
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="vendorLogin/bootstrap/css/bootstrap.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="fontsLogin/font-awesome-4.7.0/css/font-awesome.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="fontsLogin/Linearicons-Free-v1.0.0/icon-font.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="vendorLogin/animate/animate.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="vendorLogin/css-hamburgers/hamburgers.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="vendorLogin/animsition/css/animsition.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="vendorLogin/select2/select2.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="vendorLogin/daterangepicker/daterangepicker.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="cssLogin/util.css">
+    <link rel="stylesheet" type="text/css" href="cssLogin/main.css">
 
-	<!--===============================================================================================-->
+    <link href="vendorIndex/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../node_modules/sweetalert2/dist/sweetalert2.css" rel="stylesheet">
+
+    <!-- Custom fonts for this template -->
+    <link href="vendorIndex/fontawesome-free/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+
+
+
+    <!-- Custom styles for this template -->
+    <link href="cssIndex/grayscale.min.css" rel="stylesheet">
+    <!--===============================================================================================-->
 </head>
 
 <body>
-
-	<div class="limiter">
-		<div class="container-login100" style="background-image: url('images/fundo2.jpg');">
-			<div class="wrap-login100 p-l-110 p-r-110 p-t-62 p-b-33">
-				<form id="form_login" method="post">
-					<span class="login100-form-title p-b-53">
+    <div class="limiter">
+        <div class="container-login100" style="background-image: url('images/fundo2.jpg');">
+            <div class="wrap-login100 p-l-110 p-r-110 p-t-62 p-b-33">
+                <form id="form_login" method="post" class="signup-form">
+                    <span class="login100-form-title p-b-53">
 						Entrar
 					</span>
 
-					<a href="#" class="btn-face m-b-20">
-						<i class="fa fa-facebook-official"></i>
-						Facebook
-					</a>
+                    <span style="display: none;" id="erro"></span>
 
-					<a href="#" class="btn-google m-b-20">
-						<img src="images/icons/icon-google.png" alt="GOOGLE">
-						Google
-					</a>
 
-					<div class="p-t-31 p-b-9">
-						<span class="txt1">
+                    <div class="p-t-31 p-b-9">
+                        <span class="txt1">
 							Nome
 						</span>
-					</div>
-					<div class="wrap-input100 validate-input" data-validate="Username is required">
-						<input class="input100" type="text" name="login">
-						<span class="focus-input100"></span>
-					</div>
+                    </div>
+                    <div class="wrap-input100 validate-input" data-validate="Username is required">
+                        <input class="input100" type="text" name="login">
+                        <span class="focus-input100"></span>
+                    </div>
 
-					<div class="p-t-13 p-b-9">
-						<span class="txt1">
+                    <div class="p-t-13 p-b-9">
+                        <span class="txt1">
 							Senha
 						</span>
 
-						<a href="#" class="txt2 bo1 m-l-5">
+                        <a href="#" class="txt2 bo1 m-l-5">
 							Esqueceu a senha?
 						</a>
-					</div>
-					<div class="wrap-input100 validate-input" data-validate="Password is required">
-						<input class="input100" type="password" name="senha">
-						<span class="focus-input100"></span>
-					</div>
+                    </div>
+                    <div class="wrap-input100 validate-input" data-validate="Password is required">
+                        <input class="input100" type="password" name="senha">
+                        <span class="focus-input100"></span>
+                    </div>
 
-					<div class="container-login100-form-btn m-t-17">
-						<button class="login100-form-btn" type="submit" onclick="return entrar()">
+                    <div class="container-login100-form-btn m-t-17">
+                        <button class="login100-form-btn" type="submit" onclick="return entrar()">
 							Acessar
 						</button>
-					</div>
+                    </div>
 
-					<div class="w-full text-center p-t-55">
-						<span class="txt2">
+                    <div class="w-full text-center p-t-55">
+                        <span class="txt2">
 							Ainda não é cadastrado?
 						</span>
 
-						<a href="./cadastro.html" class="txt2 bo1">
+                        <a href="./cadastro.html" class="txt2 bo1">
 							Cadastre-se agora!
 						</a>
-					</div>
-				</form>
-			</div>
-		</div>
-	</div>
+
+                    </div>
+                </form>
+
+            </div>
+        </div>
+    </div>
 
 
-	<div id="dropDownSelect1"></div>
+    <div id="dropDownSelect1"></div>
 
-	<script>
+    <script>
+        function erros() {
 
-		function entrar() {
-			alert('teste')
-			var formulario = new URLSearchParams(new FormData(form_login));
-			fetch("/usuarios/autenticar", {
-				method: "POST",
-				body: formulario
-			}).then(resposta => {
-	
-				if (resposta.ok) {
-	
-					resposta.json().then(json => {
-	
-						sessionStorage.login_usuario_meuapp = json.login;
-						sessionStorage.nome_usuario_meuapp = json.nome;
-	
-						window.location.href = 'tempo-real.html';
-					});
-	
-				} else {
-	
-					console.log('Erro de login!');
-	
-				}
-			});
-	
-			return false;
-		}
-	
-	
-	</script>
-	<!--===============================================================================================-->
-	<script src="vendorLogin/jquery/jquery-3.2.1.min.js"></script>
-	<!--===============================================================================================-->
-	<script src="vendorLogin/animsition/js/animsition.min.js"></script>
-	<!--===============================================================================================-->
-	<script src="vendorLogin/bootstrap/js/popper.js"></script>
-	<script src="vendorLogin/bootstrap/js/bootstrap.min.js"></script>
-	<!--===============================================================================================-->
-	<script src="vendorLogin/select2/select2.min.js"></script>
-	<!--===============================================================================================-->
-	<script src="vendorLogin/daterangepicker/moment.min.js"></script>
-	<script src="vendorLogin/daterangepicker/daterangepicker.js"></script>
-	<!--===============================================================================================-->
-	<script src="vendorLogin/countdowntime/countdowntime.js"></script>
-	<!--===============================================================================================-->
-	
+
+        }
+    </script>
+    <script>
+        function alerterror() {
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: 'Senha ou usuario incorretos',
+                footer: '<a href=cadastrar.html>precisa de ajuda?</a>'
+            })
+        }
+
+        function alertsucess() {
+            const Toast = Swal.mixin({
+                toast: true,
+                position: 'top-end',
+                showConfirmButton: false,
+                timer: 3000,
+                timerProgressBar: true,
+                onOpen: (toast) => {
+                    toast.addEventListener('mouseenter', Swal.stopTimer)
+                    toast.addEventListener('mouseleave', Swal.resumeTimer)
+                }
+            })
+
+            Toast.fire({
+                icon: 'success',
+                title: 'Logado com sucesso'
+            })
+        }
+    </script>
+    <script>
+        function entrar() {
+            var formulario = new URLSearchParams(new FormData(form_login));
+            fetch("/usuarios/autenticar", {
+                method: "POST",
+                body: formulario
+            }).then(resposta => {
+
+                if (resposta.ok) {
+
+                    resposta.json().then(json => {
+
+                        sessionStorage.login_usuario_meuapp = json.emailUsuario;
+                        sessionStorage.nome_usuario_meuapp = json.nomeUsuario;
+                        alertsucess()
+                        window.location.href = 'dashboard.html';
+                    });
+
+                } else {
+                    alerterror()
+                    console.log('Erro de login!');
+
+                }
+            });
+
+            return false;
+        }
+    </script>
+    <!--===============================================================================================-->
+    <script src="vendorLogin/jquery/jquery-3.2.1.min.js"></script>
+    <!--===============================================================================================-->
+    <script src="vendorLogin/animsition/js/animsition.min.js"></script>
+    <!--===============================================================================================-->
+    <script src="vendorLogin/bootstrap/js/popper.js"></script>
+    <script src="vendorLogin/bootstrap/js/bootstrap.min.js"></script>
+    <!--===============================================================================================-->
+    <script src="vendorLogin/select2/select2.min.js"></script>
+    <!--===============================================================================================-->
+    <script src="vendorLogin/daterangepicker/moment.min.js"></script>
+    <script src="vendorLogin/daterangepicker/daterangepicker.js"></script>
+    <!--===============================================================================================-->
+    <script src="vendorLogin/countdowntime/countdowntime.js"></script>
+    <!--===============================================================================================-->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
 
 
 </body>
