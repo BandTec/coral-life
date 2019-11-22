@@ -40,7 +40,7 @@ router.post('/cadastrar', function(req, res, next) {
     console.log('Criando um usuário');
     let instrucaoSql = `select*from Usuario where emailUsuario='${req.body.email}'`
     sequelize.query(instrucaoSql, { model: Usuario }).then((resultado) => {
-        if (!resultado) {
+        if (resultado.length == 0) {
             Usuario.create({
                 nome: req.body.nome,
                 email: req.body.email,
