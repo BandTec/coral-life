@@ -41,18 +41,43 @@ router.post('/cadastrar', function(req, res, next) {
     let instrucaoSql = `select*from Usuario where emailUsuario='${req.body.email}'`
     sequelize.query(instrucaoSql, { model: Usuario }).then((resultado) => {
         if (resultado.length == 0) {
-            Usuario.create({
-                nome: req.body.nome,
-                email: req.body.email,
-                senha: req.body.senha,
-                token: `JKGdnfkie${Math.floor(Math.random() * 50)}sdfge${Math.floor(Math.random() * 1000)}` + Math.floor(Math.random() * 10)
-            }).then(cadastro => {
-                console.log(`Registro criado: ${cadastro}`)
-                res.send(cadastro);
-            }).catch(erro => {
-                console.error(`Cai aqui ${erro}`);
-                res.status(500).send(erro.message);
-            });
+            var erros = []
+            console.log(req.body)
+            if (!req.body.nome || typeof req.body.nome == undefined || req.body.nome == null) {
+                erros.push("Nome Invalido")
+            }
+            if (!req.body.email || typeof req.body.email == undefined || req.body.email == null) {
+                erros.push("Email Invalido")
+            }
+            if (!req.body.senha || typeof req.body.senha == undefined || req.body.senha == null) {
+                erros.push("Senha Invalida")
+            }
+            if (req.body.senha.length < 4) {
+                erros.push('Senha muito pequena!!')
+            }
+
+            if (req.body.senha != req.body.confirmaSenha) {
+                erros.push("As senhas são diferentes")
+            }
+
+            if (erros.length > 0) {
+                console.log(erros)
+                res.status(500).json({ erro: erros })
+            } else {
+                Usuario.create({
+                    nome: req.body.nome,
+                    email: req.body.email,
+                    senha: req.body.senha,
+                    token: `JKGdnfkie${Math.floor(Math.random() * 50)}sdfge${Math.floor(Math.random() * 1000)}` + Math.floor(Math.random() * 10)
+                }).then(cadastro => {
+                    console.log(`Registro criado: ${cadastro}`)
+                    res.send(cadastro);
+                }).catch(erro => {
+                    console.error(`Cai aqui ${erro}`);
+                    res.status(500).send(erro.message);
+                });
+            }
+
 
         } else {
             console.log('usuario ja existe no banco')
