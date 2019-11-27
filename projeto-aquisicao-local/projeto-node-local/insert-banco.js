@@ -4,10 +4,10 @@
  npm start
  talvez mostre uma mensagem de erro de placa arduino 
  mas depois vai começar a registrar os dados
-*/ 
+*/
 
 // se usar 'true' aqui, os dados serão gerados aleatórios e não recebidos da placa arduíno
-const gerar_dados_aleatorios = false; 
+const gerar_dados_aleatorios = false;
 
 // leitura dos dados do Arduino
 var porta_serial = require('serialport');
@@ -90,44 +90,49 @@ function registrar_leitura(temperatura) {
 
     console.log(`temperatura: ${temperatura}`);
 
+
     banco.conectar().then(() => {
 
-        return banco.sql.query(`INSERT into evento (temperaturaEvento, dataEvento, statusEvento, idDomo, estacaoEvento)
-                                values (${temperatura}, CONVERT(Datetime, '${agora()}', 120), 'teste', 1, 1);`);
 
-    }).catch(erro => { 
+        return banco.sql.query(`INSERT into Evento (temperaturaEvento, dataEvento,idDomo,estacaoEvento,statusEvento)
+                                values (${temperatura},CONVERT(Datetime, '${agora()}',120),1,'Primavera','Ideal');`);
+
+    }).catch(erro => {
 
         console.error(`Erro ao tentar registrar aquisição na base: ${erro}`);
 
     }).finally(() => {
-		console.log('Registro inserido com sucesso! \n');
-        banco.sql.close();
-        efetuando_insert = false;
+        setInterval(() => {
+            console.log('Registro inserido com sucesso! \n');
+            banco.sql.close();
+            efetuando_insert = false;
+        }, 7000);
+
     });
 
 }
 
 // função que retorna data e hora atual no formato aaaa-mm-dd HH:mm:ss
 function agora() {
-	let momento_atual = new Date();
-	let retorno = `${momento_atual.toLocaleDateString()} ${momento_atual.toLocaleTimeString()}`;
-	console.log(`Data e hora atuais: ${retorno}`);
-	return retorno;
+    let momento_atual = new Date();
+    let retorno = `${momento_atual.toLocaleDateString()} ${momento_atual.toLocaleTimeString()}`;
+    console.log(`Data e hora atuais: ${retorno}`);
+    return retorno;
 }
 
 var efetuando_insert = false;
 
 
 if (gerar_dados_aleatorios) {
-	// dados aleatórios
-	setInterval(function() {
-		console.log('Gerando valores aleatórios!');
-		registrar_leitura(Math.min(Math.random()*100, 60), Math.min(Math.random()*200, 100))
-	}, 5000);
+    // dados aleatórios
+    setInterval(function() {
+        console.log('Gerando valores aleatórios!');
+        registrar_leitura(Math.min(Math.random() * 100, 60), Math.min(Math.random() * 200, 100))
+    }, 5000);
 } else {
-	// iniciando a "escuta" de dispositivos Arduino.
-	console.log('Iniciando obtenção de valores do Arduino!');
-	iniciar_escuta();
+    // iniciando a "escuta" de dispositivos Arduino.
+    console.log('Iniciando obtenção de valores do Arduino!');
+    iniciar_escuta();
 }
 
 /*
@@ -137,4 +142,3 @@ if (gerar_dados_aleatorios) {
  talvez mostre uma mensagem de erro de placa arduino 
  mas depois vai começar a registrar os dados
 */
-

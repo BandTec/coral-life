@@ -21,9 +21,9 @@ function verificar_autenticacao() {
             redirecionar_login();
 
         } else {
+
             b_usuario.innerHTML = nome_usuario;
             token_user.innerHTML = token_usuario;
-            iduser.innerHTML = id_Usuario
             validar_sessao();
         }
     }

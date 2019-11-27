@@ -301,14 +301,23 @@
                         </div>
 
                         <div class="md-form mb-3">
-                            <i class="fas fa-lock prefix grey-text"></i>
-                            <label data-error="wrong" data-success="right" for="defaultForm-pass">Sua senha</label>
+                            <i class="fas fa-lock prefix grey-text"></i> *Minimo de 4 caracteres
+                            <label data-error="wrong" data-success="right" for="defaultForm-pass">sua senha</label>
                             <input type="password" id="defaultForm-pass" class="form-control validate" placeholder="digite sua senha" name="senha">
                         </div>
-                        <div class="md-form">
+                        <div class="md-form mb-3">
                             <i class="fas fa-lock prefix grey-text"></i>
                             <label data-error="wrong" data-success="right" for="defaultForm-pass">Confirme sua senha </label>
                             <input type="password" id="defaultForm-pass" class="form-control validate" placeholder="Confirme sua senha" name="confirmaSenha">
+                        </div>
+                        <div class="md-form">
+                            <i class="fas fa-globe-americas prefix grey-text"></i>
+                            <label data-error="wrong" data-success="right" for="defaultForm-pass">Localidade de domos</label>
+                            <select class="form-control" name="localidade" id="">
+                                <option value="1">Recife Salvador</option>
+                                <option value="2">Recife Natal</option>
+                                <option value="3">Recife Maceio</option>
+                            </select>
                         </div>
                     </div>
                     <div class="modal-footer">
@@ -351,7 +360,7 @@
                         </div>
                         <div class="md-form">
                             <i class="fas fa-lock prefix grey-text"></i> *Os token são gerados assim que você cria a conta caso não tenha mais acesso entre em contato com nosso suporte clicando
-                            <a href="">aqui</a>
+                            <a onclick="modalChat()">aqui</a>
                             <label data-error="wrong" data-success="right" for="defaultForm-pass"></label>
                             <input type="text" id="defaultForm-pass" class="form-control validate" name="tokenUsuario">
                         </div>
@@ -531,8 +540,50 @@
     <!-- Custom scripts for this template -->
     <script src="jsIndex/grayscale.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+    <script type="text/javascript" src="https://assets.freshservice.com/widget/freshwidget.js"></script>
+    <script type="text/javascript">
+        FreshWidget.init("", {
+            "queryString": "&widgetType=popup",
+            "utf8": "✓",
+            "widgetType": "popup",
+            "buttonType": "text",
+            "buttonText": "Suporte",
+            "buttonColor": "white",
+            "buttonBg": "#24364a",
+            "alignment": "2",
+            "offset": "235px",
+            "formHeight": "500px",
+            "url": "https://corallifeservicedesk.freshservice.com"
+        });
+    </script>
 
+    <script>
+        function modalChat() {
+            var winpop = window.open('https://corallifeservicedesk.freshservice.com/support/home');
+            winpop.blur();
+            window.focus();
+        }
+    </script>
 
 </body>
+
+<script>
+    function initFreshChat() {
+        window.fcWidget.init({
+            token: "1db4c39e-36f7-47c7-869f-463d9c33440f",
+            host: "https://wchat.freshchat.com"
+        });
+    }
+
+    function initialize(i, t) {
+        var e;
+        i.getElementById(t) ? initFreshChat() : ((e = i.createElement("script")).id = t, e.async = !0, e.src = "https://wchat.freshchat.com/js/widget.js", e.onload = initFreshChat, i.head.appendChild(e))
+    }
+
+    function initiateCall() {
+        initialize(document, "freshchat-js-sdk")
+    }
+    window.addEventListener ? window.addEventListener("load", initiateCall, !1) : window.attachEvent("load", initiateCall, !1);
+</script>
 
 </html>

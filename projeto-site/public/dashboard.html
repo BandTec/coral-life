@@ -24,11 +24,27 @@
     <link href="css/style-responsive.css" rel="stylesheet" />
     <link href="css/xcharts.min.css" rel=" stylesheet">
     <link href="css/jquery-ui-1.10.4.min.css" rel="stylesheet">
+    <link href="../node_modules/sweetalert2/dist/sweetalert2.css" rel="stylesheet">
     <script type="text/javascript" src="funcoes.js"></script>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+
+    <style>
+        /* Classes CSS para exemplos de alertas */
+        
+        .normal {
+            background-color: white;
+        }
+        
+        .alerta {
+            background-color: tomato;
+        }
+    </style>
+
 
 </head>
 
-<body>
+<body onload="atualizartudo()">
     <section id="container" class="">
 
         <!-- barra superior -->
@@ -39,7 +55,7 @@
             </div>
 
 
-            <a href="inicio.html" class="logo">Coral <span class="lite">Life</span></a>
+            <a href="index.html" class="logo">Coral <span class="lite">Life</span></a>
 
 
             <div class="nav search-row" id="top_menu">
@@ -140,15 +156,14 @@
                             <b class="caret"></b>
                         </a>
                         <ul class="dropdown-menu extended logout">
-                            <div class="log-arrow-up"></div>
                             <li class="eborder-top">
-                                <a href="usuario.html"><i class="icon_profile"></i> Meu perfil</a>
+                                <a href="#"><i class="icon_profile"></i> Meu perfil</a>
                             </li>
                             <li>
                                 <a href="#"><i class="icon_mail_alt"></i> Caixa de email</a>
                             </li>
                             <li>
-                                <a onclick="logoff()"><i class="icon_key_alt"></i>Sair</a>
+                                <a onclick="logoff()"><i class="fas fa-exit prefix grey-text"></i></i>Sair</a>
                             </li>
                         </ul>
                     </li>
@@ -208,12 +223,12 @@
                                 <div class="panel-body-map" a>
                                     <div id="map" style="height:400px;color: rgb(11, 80, 80)">
                                         <!--Botão modal-->
-                                        <button type="button" class="bolinha1" data-toggle="modal" data-target="#centralModalSm1">
-                  </button>
-                                        <button type="button" class="bolinha2" data-toggle="modal" data-target="#centralModalSm2">
-                  </button>
-                                        <button type="button" class="bolinha3" data-toggle="modal" data-target="#centralModalSm3">
-                  </button>
+                                        <a type="button" class="bolinha1" data-toggle="modal" data-target="#centralModalSm1">
+                                        </a>
+                                        <a type="button" class="bolinha2" data-toggle="modal" data-target="#centralModalSm2">
+                                        </a>
+                                        <a type="button" class="bolinha3" data-toggle="modal" data-target="#centralModalSm3">
+                                        </a>
                                     </div>
                                 </div>
                             </div>
@@ -224,20 +239,25 @@
                             <!-- graficos gerais lateral -->
                             <ul class="today-datas">
                                 <li>
-                                    <div><span id="todayspark4" class="spark"></span></div>
-                                    <div class="datas-text">Media/estação</div>
+
                                 </li>
                                 <li>
-                                    <div><span id="todayspark5" class="spark"></span></div>
-                                    <div class="datas-text">Temperatura diaria</div>
+                                    Media de Temperatura Atual
+
+                                    <div class="card-bod">
+                                        <div class="media" id="media_atual" style="width: 200px; height: 100px; border: solid 2px rgb(5, 126, 65);"></div>
+                                    </div>
+
+
+                                </li>
+                                <li>
+                                    Seu token
+                                    <div class="datas-text" id="token_user" style="font-size: 20px; color: red;"></div>
                                 </li>
 
-                                <li>
 
                         </div>
-                        Seu token
-                        <div class="datas-text" id="token_user" style="font-size: 20px; color: red;"></div>
-                        </li>
+
                         </ul>
                     </div>
                     </div>
@@ -263,6 +283,7 @@
                                                 <th>Nome</th>
                                                 <th></th>
                                                 <th>Temperatura</th>
+                                                <th>Status</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -271,13 +292,16 @@
                                             <td>Barreira de corais</td>
                                             <td></td>
                                             <td>
-                                                <div class="progress thin">
-                                                    <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 20%">27C°
-                                                    </div>
-                                                    <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%"> 24C°
-                                                    </div>
+                                                <div style="width:75%;">
+                                                    <div id="div_temperatura">Temperatura sendo obtida...</div>
+                                                    <div id="mensagem"></div>
+                                                    <div id="normal"></div>
+
                                                 </div>
-                                                <span class="sr-only">20%</span>
+
+                                            </td>
+                                            <td>
+                                                <span class="" id="message">Status</span>
                                             </td>
                                             </tr>
                                             <tr>
@@ -286,13 +310,16 @@
                                                 <td>Barreira de maragogi</td>
                                                 <td></td>
                                                 <td>
-                                                    <div class="progress thin">
-                                                        <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 20%"> 27C°
-                                                        </div>
-                                                        <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%"> 24C°
-                                                        </div>
+                                                    <div style="width:75%;">
+                                                        <div id="div_temperatura1">Temperatura sendo obtida...</div>
+                                                        <div id="mensagem"></div>
+                                                        <div id="normal"></div>
                                                     </div>
                                                     <span class="sr-only">20%</span>
+                                                </td>
+
+                                                <td>
+                                                    <span class="" id="message2">Status</span>
                                                 </td>
                                             </tr>
                                             <tr>
@@ -301,13 +328,15 @@
                                                 <td>Barra de são miguel</td>
                                                 <td></td>
                                                 <td>
-                                                    <div class="progress thin">
-                                                        <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 20%">27C°
-                                                        </div>
-                                                        <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%">24C°
-                                                        </div>
+                                                    <div style="width:75%;">
+                                                        <div id="div_temperatura2">Temperatura sendo obtida...</div>
+                                                        <div id="mensagem"></div>
+                                                        <div id="normal"></div>
                                                     </div>
                                                     <span class="sr-only">20%</span>
+                                                </td>
+                                                <td>
+                                                    <span class="" id="message3">Status</span>
                                                 </td>
                                             </tr>
                                         </tbody>
@@ -339,23 +368,26 @@
 
 
     <!--Modal-->
+    <!-- Button trigger modal -->
+
+
+    <!-- Modal -->
     <div class="modal fade" id="centralModalSm1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-sm" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h4 class="modal-title w-100" id="myModalLabel">Dashboard Rio Grande do Norte-RN</h4>
+                    <h4 class="modal-title w-100" id="myModalLabel">Dashboard Bahia-BA</h4>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
+                <span aria-hidden="true">&times;</span>
+              </button>
                 </div>
                 <div class="modal-body">
-                    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js" class="mapa-modal"></script>
-                    <div id="chart_divA" style="width: 900px; height: 500px;" class="mapaModal"></div>
-                    <div id="chart_div1"></div>
+                    <div style="width:75%;">
+                        <div id="div_grafico">Dados sendo obtidos...</div>
+                    </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">Fechar</button>
-                    <button type="button" class="btn btn-primary btn-sm">Salvar</button>
+                    <button type="button" class="btn btn-danger btn-sm" data-dismiss="modal">Fechar</button>
                 </div>
             </div>
         </div>
@@ -371,9 +403,9 @@
           </button>
                 </div>
                 <div class="modal-body">
-                    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js" class="mapa-modal"></script>
-                    <div id="chart_divB" style="width: 900px; height: 500px;"></div>
-                    <div id="chart_div2"></div>
+                    <div style="width:75%;">
+                        <div id="div_grafico1">Dados sendo obtidos...</div>
+                    </div>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">Fechar</button>
@@ -393,9 +425,9 @@
           </button>
                 </div>
                 <div class="modal-body">
-                    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js" class="mapa-modal"></script>
-                    <div id="chart_divC" style="width: 900px; height: 500px;"></div>
-                    <div id="chart_div3"></div>
+                    <div style="width:75%;">
+                        <div id="div_grafico2">Dados sendo obtidos...</div>
+                    </div>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">Fechar</button>
@@ -479,468 +511,359 @@
             });
         });
     </script>
-    <script>
-        google.charts.load('current', {
-            packages: ['corechart', 'line']
-        });
-        google.charts.setOnLoadCallback(drawBasic);
 
-        function drawBasic() {
-
-            var data = new google.visualization.DataTable();
-            data.addColumn('number', 'X');
-            data.addColumn('number', '');
-
-            data.addRows([
-                [0, 0],
-                [1, 10],
-                [2, 23],
-                [3, 17],
-                [4, 18],
-                [5, 9],
-                [6, 11],
-                [7, 27],
-                [8, 33],
-                [9, 40],
-                [10, 32],
-                [11, 35],
-                [12, 30],
-                [13, 40],
-                [14, 42],
-                [15, 47],
-                [16, 44],
-                [17, 48],
-                [18, 52],
-                [19, 54],
-                [20, 42],
-                [21, 55],
-                [22, 56],
-                [23, 57],
-                [24, 60],
-                [25, 50],
-                [26, 52],
-                [27, 51],
-                [28, 49],
-                [29, 53],
-                [30, 55],
-                [31, 60],
-                [32, 61],
-                [33, 59],
-                [34, 62],
-                [35, 65],
-                [36, 62],
-                [37, 58],
-                [38, 55],
-                [39, 61],
-                [40, 64],
-                [41, 65],
-                [42, 63],
-                [43, 66],
-                [44, 67],
-                [45, 69],
-                [46, 69],
-                [47, 70],
-                [48, 72],
-                [49, 68],
-                [50, 66],
-                [51, 65],
-                [52, 67],
-                [53, 70],
-                [54, 71],
-                [55, 72],
-                [56, 73],
-                [57, 75],
-                [58, 70],
-                [59, 68],
-                [60, 64],
-                [61, 60],
-                [62, 65],
-                [63, 67],
-                [64, 68],
-                [65, 69],
-                [66, 70],
-                [67, 72],
-                [68, 75],
-                [69, 80]
-            ]);
-
-            var options = {
-                hAxis: {
-                    title: 'Tempo'
-                },
-                vAxis: {
-                    title: 'Temperatura'
-                }
-            };
-
-            var chart = new google.visualization.LineChart(document.getElementById('chart_div1'));
-
-            chart.draw(data, options);
-        }
-    </script>
-
-    <script>
-        google.charts.load('current', {
-            packages: ['corechart', 'line']
-        });
-        google.charts.setOnLoadCallback(drawBasic);
-
-        function drawBasic() {
-
-            var data = new google.visualization.DataTable();
-            data.addColumn('number', 'X');
-            data.addColumn('number', '');
-
-            data.addRows([
-                [0, 0],
-                [1, 10],
-                [2, 23],
-                [3, 17],
-                [4, 18],
-                [5, 9],
-                [6, 11],
-                [7, 27],
-                [8, 33],
-                [9, 40],
-                [10, 32],
-                [11, 35],
-                [12, 30],
-                [13, 40],
-                [14, 42],
-                [15, 47],
-                [16, 44],
-                [17, 48],
-                [18, 52],
-                [19, 54],
-                [20, 42],
-                [21, 55],
-                [22, 56],
-                [23, 57],
-                [24, 60],
-                [25, 50],
-                [26, 52],
-                [27, 51],
-                [28, 49],
-                [29, 53],
-                [30, 55],
-                [31, 60],
-                [32, 61],
-                [33, 59],
-                [34, 62],
-                [35, 65],
-                [36, 62],
-                [37, 58],
-                [38, 55],
-                [39, 61],
-                [40, 64],
-                [41, 65],
-                [42, 63],
-                [43, 66],
-                [44, 67],
-                [45, 69],
-                [46, 69],
-                [47, 70],
-                [48, 72],
-                [49, 68],
-                [50, 66],
-                [51, 65],
-                [52, 67],
-                [53, 70],
-                [54, 71],
-                [55, 72],
-                [56, 73],
-                [57, 75],
-                [58, 70],
-                [59, 68],
-                [60, 64],
-                [61, 60],
-                [62, 65],
-                [63, 67],
-                [64, 68],
-                [65, 69],
-                [66, 70],
-                [67, 72],
-                [68, 75],
-                [69, 80]
-            ]);
-
-            var options = {
-                hAxis: {
-                    title: 'Tempo'
-                },
-                vAxis: {
-                    title: 'Temperatura'
-                }
-            };
-
-            var chart = new google.visualization.LineChart(document.getElementById('chart_div2'));
-
-            chart.draw(data, options);
-        }
-    </script>
-
-    <script>
-        google.charts.load('current', {
-            packages: ['corechart', 'line']
-        });
-        google.charts.setOnLoadCallback(drawBasic);
-
-        function drawBasic() {
-
-            var data = new google.visualization.DataTable();
-            data.addColumn('number', 'X');
-            data.addColumn('number', '');
-
-            data.addRows([
-                [0, 0],
-                [1, 10],
-                [2, 23],
-                [3, 17],
-                [4, 18],
-                [5, 9],
-                [6, 11],
-                [7, 27],
-                [8, 33],
-                [9, 40],
-                [10, 32],
-                [11, 35],
-                [12, 30],
-                [13, 40],
-                [14, 42],
-                [15, 47],
-                [16, 44],
-                [17, 48],
-                [18, 52],
-                [19, 54],
-                [20, 42],
-                [21, 55],
-                [22, 56],
-                [23, 57],
-                [24, 60],
-                [25, 50],
-                [26, 52],
-                [27, 51],
-                [28, 49],
-                [29, 53],
-                [30, 55],
-                [31, 60],
-                [32, 61],
-                [33, 59],
-                [34, 62],
-                [35, 65],
-                [36, 62],
-                [37, 58],
-                [38, 55],
-                [39, 61],
-                [40, 64],
-                [41, 65],
-                [42, 63],
-                [43, 66],
-                [44, 67],
-                [45, 69],
-                [46, 69],
-                [47, 70],
-                [48, 72],
-                [49, 68],
-                [50, 66],
-                [51, 65],
-                [52, 67],
-                [53, 70],
-                [54, 71],
-                [55, 72],
-                [56, 73],
-                [57, 75],
-                [58, 70],
-                [59, 68],
-                [60, 64],
-                [61, 60],
-                [62, 65],
-                [63, 67],
-                [64, 68],
-                [65, 69],
-                [66, 70],
-                [67, 72],
-                [68, 75],
-                [69, 80]
-            ]);
-
-            var options = {
-                hAxis: {
-                    title: 'Tempo'
-                },
-                vAxis: {
-                    title: 'Temperatura'
-                }
-            };
-
-            var chart = new google.visualization.LineChart(document.getElementById('chart_div3'));
-
-            chart.draw(data, options);
-        }
-    </script>
-
-
-    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-    <script type="text/javascript">
-        google.charts.load("current", {
-            packages: ["corechart"]
-        });
-        google.charts.setOnLoadCallback(drawChart);
-
-        function drawChart() {
-            var data = google.visualization.arrayToDataTable([
-                ['Dinosaur', 'Length'],
-                ['Acrocanthosaurus (top-spined lizard)', 12.2],
-                ['Albertosaurus (Alberta lizard)', 9.1],
-                ['Allosaurus (other lizard)', 12.2],
-                ['Apatosaurus (deceptive lizard)', 22.9],
-                ['Archaeopteryx (ancient wing)', 0.9],
-                ['Argentinosaurus (Argentina lizard)', 36.6],
-                ['Baryonyx (heavy claws)', 9.1],
-                ['Brachiosaurus (arm lizard)', 30.5],
-                ['Ceratosaurus (horned lizard)', 6.1],
-                ['Coelophysis (hollow form)', 2.7],
-                ['Compsognathus (elegant jaw)', 0.9],
-                ['Deinonychus (terrible claw)', 2.7],
-                ['Diplodocus (double beam)', 27.1],
-                ['Dromicelomimus (emu mimic)', 3.4],
-                ['Gallimimus (fowl mimic)', 5.5],
-                ['Mamenchisaurus (Mamenchi lizard)', 21.0],
-                ['Megalosaurus (big lizard)', 7.9],
-                ['Microvenator (small hunter)', 1.2],
-                ['Ornithomimus (bird mimic)', 4.6],
-                ['Oviraptor (egg robber)', 1.5],
-                ['Plateosaurus (flat lizard)', 7.9],
-                ['Sauronithoides (narrow-clawed lizard)', 2.0],
-                ['Seismosaurus (tremor lizard)', 45.7],
-                ['Spinosaurus (spiny lizard)', 12.2],
-                ['Supersaurus (super lizard)', 30.5],
-                ['Tyrannosaurus (tyrant lizard)', 15.2],
-                ['Ultrasaurus (ultra lizard)', 30.5],
-                ['Velociraptor (swift robber)', 1.8]
-            ]);
-
-            var options = {
-                title: 'Lengths of dinosaurs, in meters',
-                legend: {
-                    position: 'none'
-                },
-            };
-
-            var chart = new google.visualization.Histogram(document.getElementById('chart_divA'));
-            chart.draw(data, options);
-        }
-    </script>
-
-    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-    <script type="text/javascript">
-        google.charts.load("current", {
-            packages: ["corechart"]
-        });
-        google.charts.setOnLoadCallback(drawChart);
-
-        function drawChart() {
-            var data = google.visualization.arrayToDataTable([
-                ['Dinosaur', 'Length'],
-                ['Acrocanthosaurus (top-spined lizard)', 12.2],
-                ['Albertosaurus (Alberta lizard)', 9.1],
-                ['Allosaurus (other lizard)', 12.2],
-                ['Apatosaurus (deceptive lizard)', 22.9],
-                ['Archaeopteryx (ancient wing)', 0.9],
-                ['Argentinosaurus (Argentina lizard)', 36.6],
-                ['Baryonyx (heavy claws)', 9.1],
-                ['Brachiosaurus (arm lizard)', 30.5],
-                ['Ceratosaurus (horned lizard)', 6.1],
-                ['Coelophysis (hollow form)', 2.7],
-                ['Compsognathus (elegant jaw)', 0.9],
-                ['Deinonychus (terrible claw)', 2.7],
-                ['Diplodocus (double beam)', 27.1],
-                ['Dromicelomimus (emu mimic)', 3.4],
-                ['Gallimimus (fowl mimic)', 5.5],
-                ['Mamenchisaurus (Mamenchi lizard)', 21.0],
-                ['Megalosaurus (big lizard)', 7.9],
-                ['Microvenator (small hunter)', 1.2],
-                ['Ornithomimus (bird mimic)', 4.6],
-                ['Oviraptor (egg robber)', 1.5],
-                ['Plateosaurus (flat lizard)', 7.9],
-                ['Sauronithoides (narrow-clawed lizard)', 2.0],
-                ['Seismosaurus (tremor lizard)', 45.7],
-                ['Spinosaurus (spiny lizard)', 12.2],
-                ['Supersaurus (super lizard)', 30.5],
-                ['Tyrannosaurus (tyrant lizard)', 15.2],
-                ['Ultrasaurus (ultra lizard)', 30.5],
-                ['Velociraptor (swift robber)', 1.8]
-            ]);
-
-            var options = {
-                title: 'Lengths of dinosaurs, in meters',
-                legend: {
-                    position: 'none'
-                },
-            };
-
-            var chart = new google.visualization.Histogram(document.getElementById('chart_divB'));
-            chart.draw(data, options);
-        }
-    </script>
-
-    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-    <script type="text/javascript">
-        google.charts.load("current", {
-            packages: ["corechart"]
-        });
-        google.charts.setOnLoadCallback(drawChart);
-
-        function drawChart() {
-            var data = google.visualization.arrayToDataTable([
-                ['Dinosaur', 'Length'],
-                ['Acrocanthosaurus (top-spined lizard)', 12.2],
-                ['Albertosaurus (Alberta lizard)', 9.1],
-                ['Allosaurus (other lizard)', 12.2],
-                ['Apatosaurus (deceptive lizard)', 22.9],
-                ['Archaeopteryx (ancient wing)', 0.9],
-                ['Argentinosaurus (Argentina lizard)', 36.6],
-                ['Baryonyx (heavy claws)', 9.1],
-                ['Brachiosaurus (arm lizard)', 30.5],
-                ['Ceratosaurus (horned lizard)', 6.1],
-                ['Coelophysis (hollow form)', 2.7],
-                ['Compsognathus (elegant jaw)', 0.9],
-                ['Deinonychus (terrible claw)', 2.7],
-                ['Diplodocus (double beam)', 27.1],
-                ['Dromicelomimus (emu mimic)', 3.4],
-                ['Gallimimus (fowl mimic)', 5.5],
-                ['Mamenchisaurus (Mamenchi lizard)', 21.0],
-                ['Megalosaurus (big lizard)', 7.9],
-                ['Microvenator (small hunter)', 1.2],
-                ['Ornithomimus (bird mimic)', 4.6],
-                ['Oviraptor (egg robber)', 1.5],
-                ['Plateosaurus (flat lizard)', 7.9],
-                ['Sauronithoides (narrow-clawed lizard)', 2.0],
-                ['Seismosaurus (tremor lizard)', 45.7],
-                ['Spinosaurus (spiny lizard)', 12.2],
-                ['Supersaurus (super lizard)', 30.5],
-                ['Tyrannosaurus (tyrant lizard)', 15.2],
-                ['Ultrasaurus (ultra lizard)', 30.5],
-                ['Velociraptor (swift robber)', 1.8]
-            ]);
-
-            var options = {
-                title: 'Lengths of dinosaurs, in meters',
-                legend: {
-                    position: 'none'
-                },
-            };
-
-            var chart = new google.visualization.Histogram(document.getElementById('chart_divC'));
-            chart.draw(data, options);
-        }
-    </script>
     <script>
         verificar_autenticacao();
     </script>
 
 
+    <script>
+        let usuario;
+
+
+        // Não mexa nestas 2 linhas! 
+        //google.load('current', {'packages':['gauge']});
+        //google.charts.setOnLoadCallback(obterDadosGrafico);
+        google.load('visualization', '1', {
+            packages: ['corechart', 'gauge'],
+            callback: obterDadosGrafico
+        });
+        // Não mexa nessas 2 linhas! 
+
+        // só mexer se quiser alterar o tempo de atualização
+        // ou se souber o que está fazendo!
+        function atualizarGrafico() {
+            obterDadosGrafico();
+            setTimeout(atualizarGrafico, 3000);
+        }
+
+        // altere aqui as configurações do gráfico
+        // (tamanhos, cores, textos, etc)
+        function configurarGrafico() {
+            // os valores de yellowTo, yellowTo, redFrom e redTo
+            // podem vir de um outro EndPoint
+            var configuracoes = {
+                temperatura: {
+                    width: 100,
+                    height: 100,
+                    yellowFrom: 00,
+                    yellowTo: 20,
+                    yellowColor: 'cyan',
+                    redFrom: 30,
+                    redTo: 60,
+                    max: 60,
+                    minorTicks: 5
+                },
+
+            }
+
+            return configuracoes;
+        }
+
+        // altere aqui como os dados serão exibidos
+        // e como são recuperados do BackEnd
+        function obterDadosGrafico() {
+            var dados;
+
+            fetch('/leituras/tempo-real', {
+                    cache: 'no-store'
+                }).then(function(response) {
+                    if (response.ok) {
+                        response.json().then(function(resposta) {
+
+                            console.log(`Dados recebidos: ${JSON.stringify(resposta.temperaturaEvento
+                                )}`);
+
+                            // aqui, após registro. use os nomes 
+                            // dos atributos que vem no JSON 
+                            // que gerou na consulta ao banco de dados
+                            dadosTemperatura = google.visualization.arrayToDataTable([
+                                ['Label', 'Value'],
+                                ['Temperatura', resposta.temperaturaEvento]
+                            ]);
+
+                            dadosTemperatura2 = google.visualization.arrayToDataTable([
+                                ['Label', 'Value'],
+                                ['Temperatura', resposta.temperaturaEvento - 10]
+                            ]);
+                            dadosTemperatura3 = google.visualization.arrayToDataTable([
+                                ['Label', 'Value'],
+                                ['Temperatura', resposta.temperaturaEvento - 5]
+                            ]);
+
+
+                            var dados = {
+                                temperatura: dadosTemperatura,
+                                temperatura2: dadosTemperatura2,
+                                temperatura3: dadosTemperatura3
+                            }
+
+                            var temp = {
+                                temperatura1: resposta.temperaturaEvento,
+                                temperatura2: Number(resposta.temperaturaEvento) - 10,
+                                temperatura3: Number(resposta.temperaturaEvento) - 5,
+                            }
+                            alertar(temp);
+                            plotarGrafico(dados);
+                        });
+                    } else {
+                        console.error('Nenhum dado encontrado ou erro na API');
+                    }
+                })
+                .catch(function(error) {
+                    console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
+                });
+
+        }
+
+        function alertar(temperatura) {
+            // ideal que venham de algum EndPoint
+            var limites = {
+                max_temperatura: 20,
+                min_temperatura: 15,
+            };
+
+            var mensagem = '';
+
+            if (temperatura.temperatura1 > 15 && temperatura.temperatura1 < 20) {
+                message.innerHTML = '<b style="color:green">Temperatura normal</b> <br> Ideal'
+            }
+            if (temperatura.temperatura1 >= limites.max_temperatura) {
+                message.innerHTML = '<b style="color:red">Temperatura Alta</b> <br> Critico'
+            }
+            if (temperatura.temperatura1 <= limites.min_temperatura) {
+                message.innerHTML = '<b style="color:blue">Temperatura Baixa</b> <br> Critico'
+            }
+            if (temperatura.temperatura2 > 15 && temperatura.temperatura2 < 20) {
+                message2.innerHTML = '<b style="color:green">Temperatura normal</b> <br> Ideal'
+            }
+            if (temperatura.temperatura2 >= limites.max_temperatura) {
+                message2.innerHTML = '<b style="color:red">Temperatura Alta</b> <br> Critico'
+            }
+            if (temperatura.temperatura2 <= limites.min_temperatura) {
+                message2.innerHTML = '<b style="color:blue">Temperatura Baixa</b> <br> Critico'
+            }
+            if (temperatura.temperatura3 > 15 && temperatura.temperatura3 < 20) {
+                message3.innerHTML = '<b style="color:green">Temperatura normal</b> <br> Ideal'
+            }
+            if (temperatura.temperatura3 >= limites.max_temperatura) {
+                message3.innerHTML = '<b style="color:red">Temperatura Alta</b> <br> Critico'
+            }
+            if (temperatura.temperatura3 <= limites.min_temperatura) {
+                message3.innerHTML = '<b style="color:blue">Temperatura Baixa</b> <br> Critico'
+            }
+        }
+
+        // só altere aqui se souber o que está fazendo!
+        function plotarGrafico(dados) {
+            console.log('iniciando plotagem dos gráficos...');
+            var chartTemperatura = new google.visualization.Gauge(div_temperatura);
+            chartTemperatura.draw(dados.temperatura, configurarGrafico().temperatura);
+            var chartTemperatura1 = new google.visualization.Gauge(div_temperatura1);
+            chartTemperatura1.draw(dados.temperatura2, configurarGrafico().temperatura);
+            var chartTemperatura2 = new google.visualization.Gauge(div_temperatura2);
+            chartTemperatura2.draw(dados.temperatura3, configurarGrafico().temperatura);
+
+        }
+    </script>
+    <!--Grafico historico-->
+    <script>
+        // Não mexa nestas 3 linhas! 
+        google.load('visualization', '1', {
+            packages: ['corechart', 'line'],
+            callback: obterDadosgrafico
+        });
+        // Não mexa nessas 3 linhas! 
+        // só mexer se quiser alterar o tempo de atualização
+        // ou se souber o que está fazendo!
+
+        function atualizartudo() {
+            atualizarGrafico()
+            atualizargrafico()
+        }
+
+        function atualizargrafico() {
+            MediaGeral()
+            obterDadosgrafico();
+            setTimeout(atualizargrafico, 10000);
+        }
+        // altere aqui as configurações do gráfico
+        // (tamanhos, cores, textos, etc)
+        function configurargrafico() {
+            var altura = 500;
+            var largura = 500;
+            var configuracoes = {
+                tooltip: {
+                    isHtml: true
+                },
+                trendlines: {
+                    0: {
+                        labelInLegend: 'Temperatura'
+                    },
+
+                },
+                title: 'Histórico recente de temperatura',
+                legend: {
+                    position: 'bottom'
+                },
+                colors: ['blue'],
+                isStacked: true,
+                width: largura,
+                height: altura,
+                vAxis: {
+                    textStyle: {
+                        fontSize: 12
+                    }
+                },
+                hAxis: {
+                    slantedText: false,
+                    slantedTextAngle: 45,
+                    textStyle: {
+                        fontSize: 10
+                    }
+                },
+                chartArea: {
+                    left: 50,
+                    top: 20,
+                    width: (largura - 10),
+                    height: (altura - 90)
+                }
+            };
+            return configuracoes;
+        }
+        // altere aqui como os dados serão exibidos
+        // e como são recuperados do BackEnd
+        function obterDadosgrafico() {
+            var dados = new google.visualization.DataTable();
+            dados.addColumn('string', 'Momento');
+            dados.addColumn('number', 'Temperatura');
+            fetch('/leituras/ultimas', {
+                    cache: 'no-store'
+                }).then(function(response) {
+                    if (response.ok) {
+                        response.json().then(function(resposta) {
+
+                            console.log(`Dados recebidos: ${JSON.stringify(dados)}`);
+                            resposta.reverse();
+                            for (i = 0; i < resposta.length; i++) {
+                                var registro = resposta[i];
+                                // aqui, após registro. use os nomes 
+                                // dos atributos que vem no JSON 
+                                // que gerou na consulta ao banco de dados
+                                dados.addRow([
+                                    registro.dataEvento,
+                                    registro.temperaturaEvento,
+                                ]);
+                            }
+                            plotargrafico(dados);
+                        });
+                    } else {
+                        console.error('Nenhum dado encontrado ou erro na API');
+                    }
+                })
+                .catch(function(error) {
+                    console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
+                });
+        }
+        // só altere aqui se souber o que está fazendo!
+        function plotargrafico(dados) {
+            console.log('iniciando plotagem do gráfico...');
+            var chart = new google.visualization.LineChart(div_grafico);
+            chart.draw(dados, configurargrafico());
+            var chart1 = new google.visualization.LineChart(div_grafico1);
+            chart1.draw(dados, configurargrafico());
+            var chart2 = new google.visualization.LineChart(div_grafico2);
+            chart2.draw(dados, configurargrafico());
+            var chart4 = new google.visualization.LineChart(div_grafico4);
+            chart4.draw(dados, configurargrafico());
+        }
+    </script>
+
+    <script>
+        function MediaGeral() {
+            fetch('/leituras/media', {
+
+            }).then((sucesso) => {
+                if (sucesso.ok) {
+                    sucesso.json().then((media) => {
+
+                        /* var valores = Number(media.Media) - 15
+                         media_atual.innerHTML = ''
+                         if (valores > 37) {
+                             media_atual.innerHTML += `<b style='color:red; font-size:30px'>${valores.toFixed(2)}ºC</b> <br><br>`
+                             media_atual.innerHTML += `<b style='color:red; font-size:15px'>Temperatura Média Critica</b>`
+                         } else if (valores >= 26) {
+                             media_atual.innerHTML += `<b style='color:green; font-size:30px'>${valores.toFixed(2)}ºC</b> <br><br>`
+                             media_atual.innerHTML += `<b style='color:green; font-size:15px'>Temperatura Média Ideal</b>`
+                         } else {
+                             media_atual.innerHTML += `<b style='color:red; font-size:30px'>${valores.toFixed(2)}ºC</b> <br><br>`
+                             media_atual.innerHTML += `<b style='color:red; font-size:15px'>Temperatura Média Critica</b>`
+                         }
+                         */
+
+                        media_atual.innerHTML = ''
+                        if (media.Media > 37) {
+                            media_atual.innerHTML += `<b style='color:red; font-size:30px'>${media.Media.toFixed(2)}ºC</b> <br><br>`
+                            media_atual.innerHTML += `<b style='color:red; font-size:15px'>Temperatura Média Critica</b>`
+                        } else if (media.Media >= 26) {
+                            media_atual.innerHTML += `<b style='color:green; font-size:30px'>${media.Media.toFixed(2)}ºC</b> <br><br>`
+                            media_atual.innerHTML += `<b style='color:green; font-size:15px'>Temperatura Média Ideal</b>`
+                        } else {
+                            media_atual.innerHTML += `<b style='color:red; font-size:30px'>${media.Media.toFixed(2)}ºC</b> <br><br>`
+                            media_atual.innerHTML += `<b style='color:red; font-size:15px'>Temperatura Média Critica</b>`
+                        }
+
+
+                    })
+                } else {
+                    alert('Não foi possivel localizar')
+                }
+            }).catch((err) => {
+                alert(err.message)
+            })
+        }
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+
+    <script type="text/javascript" src="https://assets.freshservice.com/widget/freshwidget.js"></script>
+    <script type="text/javascript">
+        FreshWidget.init("", {
+            "queryString": "&widgetType=popup&submitThanks=Seu+ticket+foi+criado+com+sucesso",
+            "utf8": "✓",
+            "widgetType": "popup",
+            "buttonType": "text",
+            "buttonText": "Suporte",
+            "buttonColor": "white",
+            "buttonBg": "#00830C",
+            "alignment": "2",
+            "offset": "235px",
+            "submitThanks": "Seu ticket foi criado com sucesso",
+            "formHeight": "500px",
+            "url": "https://corallifeservicedesk.freshservice.com"
+        });
+    </script>
+
 </body>
+
+<script>
+    function initFreshChat() {
+        window.fcWidget.init({
+            token: "1db4c39e-36f7-47c7-869f-463d9c33440f",
+            host: "https://wchat.freshchat.com"
+        });
+    }
+
+    function initialize(i, t) {
+        var e;
+        i.getElementById(t) ? initFreshChat() : ((e = i.createElement("script")).id = t, e.async = !0, e.src = "https://wchat.freshchat.com/js/widget.js", e.onload = initFreshChat, i.head.appendChild(e))
+    }
+
+    function initiateCall() {
+        initialize(document, "freshchat-js-sdk")
+    }
+    window.addEventListener ? window.addEventListener("load", initiateCall, !1) : window.attachEvent("load", initiateCall, !1);
+</script>
 
 
 </html>

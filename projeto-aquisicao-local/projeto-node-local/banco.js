@@ -6,7 +6,7 @@ var configuracoes = {
         user: "usercorallife",
         password: "#Gfgrupo5b",
         database: "bdcorallife",
-        options: { 
+        options: {
             encrypt: true
         },
         pool: {
@@ -26,7 +26,7 @@ var configuracoes = {
         }
     }
 }
- 
+
 var sql = require('mssql');
 sql.on('error', err => {
     console.error(`Erro de Conexão: ${err}`);
@@ -35,9 +35,9 @@ sql.on('error', err => {
 var perfil = desenvolvimento ? 'desenvolvimento' : 'producao';
 
 function conectar() {
-  sql.close();
-  return sql.connect(configuracoes[perfil])
-} 
+    sql.close();
+    return sql.connect(configuracoes[perfil])
+}
 
 module.exports = {
     conectar: conectar,

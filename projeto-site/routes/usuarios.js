@@ -53,7 +53,7 @@ router.post('/cadastrar', function(req, res, next) {
                 erros.push("Senha Invalida")
             }
             if (req.body.senha.length < 4) {
-                erros.push('Senha muito pequena!!')
+                erros.push('Senha muito pequena')
             }
 
             if (req.body.senha != req.body.confirmaSenha) {
