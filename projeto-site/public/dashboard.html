@@ -157,7 +157,7 @@
                         </a>
                         <ul class="dropdown-menu extended logout">
                             <li class="eborder-top">
-                                <a href="#"><i class="icon_profile"></i> Meu perfil</a>
+                                <a href="/usuario.html"><i class="icon_profile"></i> Meu perfil</a>
                             </li>
                             <li>
                                 <a href="#"><i class="icon_mail_alt"></i> Caixa de email</a>
@@ -249,10 +249,6 @@
                                     </div>
 
 
-                                </li>
-                                <li>
-                                    Seu token
-                                    <div class="datas-text" id="token_user" style="font-size: 20px; color: red;"></div>
                                 </li>
 
 
@@ -408,8 +404,8 @@
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">Fechar</button>
-                    <button type="button" class="btn btn-primary btn-sm">Salvar</button>
+                    <button type="button" class="btn btn-danger btn-sm" data-dismiss="modal">Fechar</button>
+
                 </div>
             </div>
         </div>
@@ -430,8 +426,8 @@
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">Fechar</button>
-                    <button type="button" class="btn btn-primary btn-sm">Salvar</button>
+                    <button type="button" class="btn btn-danger btn-sm" data-dismiss="modal">Fechar</button>
+
                 </div>
             </div>
         </div>
@@ -737,6 +733,12 @@
             var dados = new google.visualization.DataTable();
             dados.addColumn('string', 'Momento');
             dados.addColumn('number', 'Temperatura');
+            var dados2 = new google.visualization.DataTable();
+            dados2.addColumn('string', 'Momento');
+            dados2.addColumn('number', 'Temperatura');
+            var dados3 = new google.visualization.DataTable();
+            dados3.addColumn('string', 'Momento');
+            dados3.addColumn('number', 'Temperatura');
             fetch('/leituras/ultimas', {
                     cache: 'no-store'
                 }).then(function(response) {
@@ -752,10 +754,20 @@
                                 // que gerou na consulta ao banco de dados
                                 dados.addRow([
                                     registro.dataEvento,
-                                    registro.temperaturaEvento,
+                                    parseInt(registro.temperaturaEvento),
+                                ]);
+                                dados2.addRow([
+                                    registro.dataEvento,
+                                    parseInt(registro.temperaturaEvento) - 10,
+                                ]);
+                                dados3.addRow([
+                                    registro.dataEvento,
+                                    parseInt(registro.temperaturaEvento) - 5,
                                 ]);
                             }
                             plotargrafico(dados);
+                            plotargrafico2(dados2);
+                            plotargrafico3(dados3);
                         });
                     } else {
                         console.error('Nenhum dado encontrado ou erro na API');
@@ -766,16 +778,22 @@
                 });
         }
         // só altere aqui se souber o que está fazendo!
-        function plotargrafico(dados) {
+        function plotargrafico(dados1) {
             console.log('iniciando plotagem do gráfico...');
             var chart = new google.visualization.LineChart(div_grafico);
-            chart.draw(dados, configurargrafico());
+            chart.draw(dados1, configurargrafico());
+        }
+
+        function plotargrafico2(dados2) {
+            console.log('iniciando plotagem do gráfico...');
             var chart1 = new google.visualization.LineChart(div_grafico1);
-            chart1.draw(dados, configurargrafico());
+            chart1.draw(dados2, configurargrafico());
+        }
+
+        function plotargrafico3(dados3) {
+            console.log('iniciando plotagem do gráfico...');
             var chart2 = new google.visualization.LineChart(div_grafico2);
-            chart2.draw(dados, configurargrafico());
-            var chart4 = new google.visualization.LineChart(div_grafico4);
-            chart4.draw(dados, configurargrafico());
+            chart2.draw(dados3, configurargrafico());
         }
     </script>
 
@@ -864,6 +882,24 @@
     }
     window.addEventListener ? window.addEventListener("load", initiateCall, !1) : window.attachEvent("load", initiateCall, !1);
 </script>
+
+<script>
+    function myFunction() {
+        /* Get the text field */
+        var copyText = document.getElementById("myInput");
+
+        /* Select the text field */
+        copyText.select();
+        copyText.setSelectionRange(0, 99999); /*For mobile devices*/
+
+        /* Copy the text inside the text field */
+        document.execCommand("copy");
+
+        /* Alert the copied text */
+        alert("Copied the text: " + copyText.value);
+    }
+</script>
+
 
 
 </html>

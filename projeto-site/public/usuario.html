@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,169 +8,357 @@
     <meta name="author" content="GeeksLabs">
     <meta name="keyword" content="Creative, Dashboard, Admin, Template, Theme, Bootstrap, Responsive, Retina, Minimal">
     <link rel="shortcut icon" href="img/favicon.png">
+
     <title>Dashboard-Oceantec</title>
+
+
     <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/paginausuario.css">
+
     <link href="css/bootstrap-theme.css" rel="stylesheet">
+
     <link href="css/elegant-icons-style.css" rel="stylesheet" />
     <link href="css/font-awesome.min.css" rel="stylesheet" />
-    <link href="assets/fullcalendar/fullcalendar/bootstrap-fullcalendar.css" rel="stylesheet" />
-    <link href="assets/fullcalendar/fullcalendar/fullcalendar.css" rel="stylesheet" />
-    <link href="assets/jquery-easy-pie-chart/jquery.easy-pie-chart.css" rel="stylesheet" type="text/css" media="screen" />
-    <link rel="stylesheet" href="css/owl.carousel.css" type="text/css">
-    <link href="css/jquery-jvectormap-1.2.2.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/fullcalendar.css">
-    <link href="css/widgets.css" rel="stylesheet">
+
     <link href="css/style.css" rel="stylesheet">
     <link href="css/style-responsive.css" rel="stylesheet" />
-    <link href="css/xcharts.min.css" rel=" stylesheet">
-    <link href="css/jquery-ui-1.10.4.min.css" rel="stylesheet">
-    <script type="text/javascript" src="./funcoes.js"></script>
+    <link href="../node_modules/sweetalert2/dist/sweetalert2.css" rel="stylesheet">
+    <script type="text/javascript" src="funcoes.js"></script>
 </head>
+
 <body>
-        <body>
-                <section id="container" class="">
-            
-                    <!-- barra superior -->
-            
-                    <header class="header dark-bg">
-                        <div class="toggle-nav">
-                            <div class="icon-reorder tooltips" data-original-title="Toggle Navigation" data-placement="bottom"><i class="icon_menu"></i></div>
-                        </div>
-            
-            
-                        <a href="dashboard.html" class="logo">Coral <span class="lite">Life</span></a>
-            
-            
-                        <div class="nav search-row" id="top_menu">
-            
-                            <ul class="nav top-menu">
-                                <li>
-                                    <form class="navbar-form">
-                                        <input class="form-control" placeholder="Search" type="text">
-                                    </form>
-                                </li>
-                            </ul>
-            
-                        </div>
-            
-                        <div class="top-nav notification-row">
-            
-                            <ul class="nav pull-right top-menu">
-<!-- box de informações -->
-<li id="task_notificatoin_bar" class="dropdown">
-        <a data-toggle="dropdown" class="dropdown-toggle" href="#">
-            <i class="icon-task-l"></i>
-            <span class="badge bg-important">0</span>
-        </a>
-        <ul class="dropdown-menu extended tasks-bar">
-            <div class="notify-arrow notify-arrow-blue"></div>
-            <li>
-                <p class="blue">Suas atualizações</p>
-            </li>
-            <li>
-                <a href="#">
-                    <div class="task-info">
-                        <div class="desc">Estatisticas anuais</div>
-                        <div class="percent">90%</div>
-                    </div>
-                    <div class="progress progress-striped">
-                        <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" style="width: 90%">
-                            <span class="sr-only">90% Completo</span>
-                        </div>
-                    </div>
-                </a>
-            </li>
-            <li>
-                <a href="#">
-                    <div class="task-info">
-                        <div class="desc">
-                            Estatistica Diaria
-                        </div>
-                        <div class="percent">30%</div>
-                    </div>
-                    <div class="progress progress-striped">
-                        <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" style="width: 30%">
-                            <span class="sr-only">30% Complete (warning)</span>
-                        </div>
-                    </div>
-                </a>
-            </li>
-            <li class="external">
-                <a href="#"></a>
-            </li>
-        </ul>
-    </li>
 
-    <li id="mail_notificatoin_bar" class="dropdown">
-        <a data-toggle="dropdown" class="dropdown-toggle" href="#">
-            <i class="icon-envelope-l"></i>
-            <span class="badge bg-important">0</span>
-        </a>
-        <ul class="dropdown-menu extended inbox">
-            <div class="notify-arrow notify-arrow-blue"></div>
-            <li>
-                <p class="blue">Você possui 0 mensagens</p>
-            </li>
-            <li>
-                <a href="#">Ver mensagens</a>
-            </li>
-        </ul>
-    </li>
-    <li id="alert_notificatoin_bar" class="dropdown">
-        <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+    <section id="container" class="">
 
-            <i class="icon-bell-l"></i>
-            <span class="badge bg-important">0</span>
-        </a>
-        <ul class="dropdown-menu extended notification">
-            <div class="notify-arrow notify-arrow-blue"></div>
-            <li>
-                <a href="#">Ver notificações</a>
-            </li>
-        </ul>
-    </li>
-    
-</ul>
-</div>
-</header>            
 
-        <div id="sidebar" class="img_perfil">
-        <center>
-            <img src="./img/avatar2.png" alt="">
-            <br>
-            <br>
-            <b id="b_usuario"></b>
-        </center>
-     <!-- Menu lateral -->
-     <aside>
+        <header class="header dark-bg">
+            <div class="toggle-nav">
+                <div class="icon-reorder tooltips" data-original-title="Toggle Navigation" data-placement="bottom"><i class="icon_menu"></i></div>
+            </div>
+
+            <!--logo start-->
+            <a href="dashboard.html" class="logo">Coral<span class="lite">life</span></a>
+            <!--logo end-->
+
+            <div class="nav search-row" id="top_menu">
+                <!--  search form start -->
+                <ul class="nav top-menu">
+                    <li>
+                        <form class="navbar-form">
+                            <input class="form-control" placeholder="Search" type="text">
+                        </form>
+                    </li>
+                </ul>
+                <!--  search form end -->
+            </div>
+
+            <div class="top-nav notification-row">
+
+                <ul class="nav pull-right top-menu">
+
+                    <!-- box de informações -->
+                    <li id="task_notificatoin_bar" class="dropdown">
+                        <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                            <i class="icon-task-l"></i>
+                            <span class="badge bg-important">6</span>
+                        </a>
+                        <ul class="dropdown-menu extended tasks-bar">
+                            <div class="notify-arrow notify-arrow-blue"></div>
+                            <li>
+                                <p class="blue">Suas atualizações</p>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <div class="task-info">
+                                        <div class="desc">Estatisticas anuais</div>
+                                        <div class="percent">90%</div>
+                                    </div>
+                                    <div class="progress progress-striped">
+                                        <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" style="width: 90%">
+                                            <span class="sr-only">90% Completo</span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <div class="task-info">
+                                        <div class="desc">
+                                            Estatistica Diaria
+                                        </div>
+                                        <div class="percent">30%</div>
+                                    </div>
+                                    <div class="progress progress-striped">
+                                        <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" style="width: 30%">
+                                            <span class="sr-only">30% Complete (warning)</span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="external">
+                                <a href="#"></a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li id="mail_notificatoin_bar" class="dropdown">
+                        <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                            <i class="icon-envelope-l"></i>
+                            <span class="badge bg-important">5</span>
+                        </a>
+                        <ul class="dropdown-menu extended inbox">
+                            <div class="notify-arrow notify-arrow-blue"></div>
+                            <li>
+                                <p class="blue">Você possui 5 mensagens</p>
+                            </li>
+                            <li>
+                                <a href="#">Ver mensagens</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li id="alert_notificatoin_bar" class="dropdown">
+                        <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+
+                            <i class="icon-bell-l"></i>
+                            <span class="badge bg-important">7</span>
+                        </a>
+                        <ul class="dropdown-menu extended notification">
+                            <div class="notify-arrow notify-arrow-blue"></div>
+                            <li>
+                                <a href="#">Ver notificações</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                            <span class="profile-ava">
+                <img alt="" src="img/avatar2.png" width=40 height=40>
+              </span>
+                            <b id="b_usuario"></b>
+
+                            <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu extended logout">
+                            <div class="log-arrow-up"></div>
+                            <li class="eborder-top">
+                                <a href="/usuario.html"><i class="icon_profile"></i> Meu perfil</a>
+                            </li>
+                            <li>
+                                <a href="#"><i class="icon_mail_alt"></i> Caixa de email</a>
+                            </li>
+                            <li>
+                                <a onclick="logoff()"><i class="fas fa-exit prefix grey-text"></i></i>Sair</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </header>
+        <aside>
             <div id="sidebar" class="nav-collapse ">
 
                 <ul class="sidebar-menu">
-            
-                    <li class="sub-menu">
-                            <b class="caret"></b>
-                            <i class="icon_desktop"></i>
-                            <span>Estatisticas</span>
-                            <span class="menu-arrow arrow_carrot-right"></span>
+                    <li class="active">
+                        <a class="" href="dashboard.html">
+                            <i class="icon_house_alt"></i>
+                            <span>Dashboard</span>
                         </a>
-                        <ul class="sub">
-                        </ul>
                     </li>
+                    <li class="sub-menu">
+                        <a href="javascript:;" class="">
+                            <i class="icon_document_alt"></i>
+                            <span>Relatorio</span>
+                        </a>
                     </li>
+                    <li class="sub-menu">
+                        <a href="./chart-chartjs.html" class="">
+                            <i class="icon_document_alt"></i>
+                            <span>Estatisticas</span>
+                        </a>
+
+
+
                 </ul>
-
             </div>
-            </aside>
-            
-                
-        </div>
+        </aside>
+        <section id="main-content">
+            <section class="wrapper">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h3 class="page-header"><i class="icon_piechart"></i> Estatisticas</h3>
+                        <ol class="breadcrumb">
+                            <li><i class="fa fa-home"></i><a href="dashboard.html">Dashboard</a></li>
+                            <li><i class="icon_piechart"></i>Graficos</li>
+
+                        </ol>
+                    </div>
+                </div>
+                <div class="row">
+
+                    <div class="col-lg-8">
+
+                        <section class="panel">
+                            <header class="panel-heading">
+                                <h3>Minha conta</Char>
+                            </header>
+                            <div class="panel-body">
+                                <div class="card">
+                                    <div class="card-bod">
+                                        <div class="col-lg-8">
+                                            <form id="form_minhaconta" method="post" class="signup-form">
+                                                <div class="row">
+                                                    <div class="col-lg-18">
+                                                        <label for="name">Nome</label>
+                                                        <input type="text" class="form-control" value="" id="nomeUsuario" name='nomeUsuario'>
+                                                        <br>
+                                                    </div>
+                                                    <div class="col-lg-18">
+                                                        <label for="name">Email</label>
+                                                        <input type="text" class="form-control" value="" id="emailUsuario" name="emailUsuario" required>
+                                                        <br>
+                                                    </div>
+                                                    <div class="col-lg-18">
+                                                        <label for="name">Rua</label>
+                                                        <input type="text" class="form-control" value="" name='ruaUsuario' id="ruaUsuario">
+                                                        <br>
+                                                    </div>
+                                                    <div class="col-lg-18">
+                                                        <label for="name">Cep</label>
+                                                        <input type="text" class="form-control" value="" name="cepUsuario" id="cepUsuario">
+                                                        <br>
+                                                    </div>
+                                                    <div class="col-lg-18">
+                                                        <label for="name">Complemento</label>
+                                                        <input type="text" class="form-control" value="" name="complementoUsuario" id="complementoUsuario">
+                                                        <br>
+                                                    </div>
+                                                    <div class="col-lg-18">
+                                                        <label for="name">token de segurança</label>
+                                                        <input class="form-control" type="text" value="" id="myInput" name="myInput"><br>
+                                                        <input type="hidden" id="tokenoculto" value="" name="token">
+                                                    </div>
+                                                    <br>
+                                                    <button class="btn btn-warning" type="submit" onclick="return alterarConta()">
+                                                        Atualizar os dados
+                                                        </button>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+
+                    </div>
 
 
-        
+                </div>
+            </section>
+
+
+        </section>
+
+        <script>
+            function alteraSuccess() {
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Alterado',
+                    text: 'Usuario alterado com sucesso',
+                })
+            }
+
+            function alteraError(err) {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Oops...',
+                    text: `${err}`,
+                    footer: '<a href= class="">Entre em contato com suporte</a>'
+                })
+            }
+
+            function alterarConta() {
+                var formulario = new URLSearchParams(new FormData(form_minhaconta));
+                fetch("/usuarios/alterarconta", {
+                    method: "POST",
+                    body: formulario
+                }).then(sucesso => {
+                    if (sucesso.ok) {
+
+                        alteraSuccess()
+                        setInterval(() => {
+                            window.location.href = 'usuario.html';
+                        }, 1000);
+                    } else {
+                        sucesso.json().then((json) => {
+                            alteraError(json.erro)
+                            console.log('Erro de Alteração!');
+                        });
+                    }
+                });
+
+                return false;
+            }
+        </script>
+
+        <!-- Bootstrap core JavaScript -->
+        <script src="vendorIndex/jquery/jquery.min.js"></script>
+        <script src="vendorIndex/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+        <!-- Plugin JavaScript -->
+        <script src="vendorIndex/jquery-easing/jquery.easing.min.js"></script>
+
+        <!-- Custom scripts for this template -->
+        <script src="jsIndex/grayscale.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+        <script type="text/javascript" src="https://assets.freshservice.com/widget/freshwidget.js"></script>
+        <script type="text/javascript">
+            FreshWidget.init("", {
+                "queryString": "&widgetType=popup",
+                "utf8": "✓",
+                "widgetType": "popup",
+                "buttonType": "text",
+                "buttonText": "Suporte",
+                "buttonColor": "white",
+                "buttonBg": "#24364a",
+                "alignment": "2",
+                "offset": "235px",
+                "formHeight": "500px",
+                "url": "https://corallifeservicedesk.freshservice.com"
+            });
+        </script>
+
+        <script>
+            function modalChat() {
+                var winpop = window.open('https://corallifeservicedesk.freshservice.com/support/home');
+                winpop.blur();
+                window.focus();
+            }
+        </script>
 
 </body>
+
 <script>
-        verificar_autenticacao();
-    </script>
+    function initFreshChat() {
+        window.fcWidget.init({
+            token: "1db4c39e-36f7-47c7-869f-463d9c33440f",
+            host: "https://wchat.freshchat.com"
+        });
+    }
+
+    function initialize(i, t) {
+        var e;
+        i.getElementById(t) ? initFreshChat() : ((e = i.createElement("script")).id = t, e.async = !0, e.src = "https://wchat.freshchat.com/js/widget.js", e.onload = initFreshChat, i.head.appendChild(e))
+    }
+
+    function initiateCall() {
+        initialize(document, "freshchat-js-sdk")
+    }
+    window.addEventListener ? window.addEventListener("load", initiateCall, !1) : window.attachEvent("load", initiateCall, !1);
+</script>
+
+<script>
+    verificar_autenticacao();
+</script>
+
+</body>
+
 </html>

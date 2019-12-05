@@ -125,6 +125,70 @@ router.post('/recuperarsenha', (req, res, next) => {
 
 })
 
+router.post('/alterarconta', (req, res, next) => {
+    var errosEdit = []
+    console.log(req.body)
+    if (!req.body.myInput || typeof req.body.myInput == undefined || req.body.myInput == null) {
+        errosEdit.push("Token não pode estar em branco")
+    }
+    if (!req.body.emailUsuario || typeof req.body.emailUsuario == undefined || req.body.emailUsuario == null) {
+        errosEdit.push("Email não pode estar em branco")
+    }
+
+    if (req.body.token != req.body.myInput) {
+        errosEdit.push("Token não pode estar invalido")
+    }
+
+    if (errosEdit.length > 0) {
+        console.log(errosEdit)
+        res.status(500).json({ erro: errosEdit })
+    } else {
+
+        let instrucaoSql = `select * from Usuario where emailUsuario='${req.body.emailUsuario}' and tokenUsuario='${req.body.myInput}'`;
+        console.log(instrucaoSql);
+
+        sequelize.query(instrucaoSql, { model: Usuario }).then(resultado => {
+            console.log(`Encontrados: ${resultado.length}`);
+            if (resultado.length == 1) {
+                var erros = []
+                console.log(req.body)
+                if (!req.body.nomeUsuario || typeof req.body.nomeUsuario == undefined || req.body.nomeUsuario == null) {
+                    erros.push("Nome Invalido")
+                }
+                if (!req.body.emailUsuario || typeof req.body.emailUsuario == undefined || req.body.emailUsuario == null) {
+                    erros.push("Email Invalido")
+                }
+
+                if (erros.length > 0) {
+                    console.log(erros)
+                    res.status(500).json({ erro: erros })
+                } else {
+                    let sqlUpdate = `update Usuario set nomeUsuario='${req.body.nomeUsuario}' ,emailUsuario='${req.body.emailUsuario}',ruaUsuario='${req.body.ruaUsuario}',cepUsuario='${req.body.cepUsuario}',
+                complementoUsuario='${req.body.complementoUsuario}'  where idUsuario=${resultado[0].dataValues.idUsuario}`
+                    sequelize.query(sqlUpdate, { model: Usuario }).then(sucesso => {
+                        if (sucesso) {
+                            console.log('Usuario alterado com sucesso')
+                            console.log(sucesso[0])
+                            res.json(sucesso[0])
+                        }
+                    }).catch((err) => {
+                        res.status(500).send(err.message);
+                    })
+                }
+
+            } else if (resultado.length == 0) {
+                res.status(403).send('Não foi possivel achar o usuario');
+            } else {
+                res.status(403).send('erro');
+            }
+
+        }).catch(erro => {
+            console.error(erro);
+            res.status(500).send(erro.message);
+        });
+    }
+})
+
 
 
 /* Verificação de usuário */
