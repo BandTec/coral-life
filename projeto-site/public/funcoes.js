@@ -6,7 +6,7 @@ let cep_usuario
 let complemento_usuario
 
 function redirecionar_login() {
-    window.location.href = 'inicio.html';
+    window.location.href = 'index.html';
 }
 
 
