@@ -55,7 +55,7 @@
             </div>
 
 
-            <a href="index.html" class="logo">Coral <span class="lite">Life</span></a>
+            <a href="dashboard.html" class="logo">Coral <span class="lite">Life</span></a>
 
 
             <div class="nav search-row" id="top_menu">
@@ -138,12 +138,25 @@
                         <a data-toggle="dropdown" class="dropdown-toggle" href="#">
 
                             <i class="icon-bell-l"></i>
-                            <span class="badge bg-important">7</span>
+                            <span id="notificação" class="badge bg-important">3</span>
                         </a>
                         <ul class="dropdown-menu extended notification">
-                            <div class="notify-arrow notify-arrow-blue"></div>
+                            <div class="notify-arrow notify-arrow-red"></div>
                             <li>
                                 <a href="#">Ver notificações</a>
+                                <a href="#">
+                                    <div class="task-info">
+                                        <div class="desc">
+                                            Estatistica Diaria
+                                        </div>
+                                        <div class="percent">30%</div>
+                                    </div>
+                                    <div class="progress progress-striped">
+                                        <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" style="width: 30%">
+                                            <span class="sr-only">30% Complete (warning)</span>
+                                        </div>
+                                    </div>
+                                </a>
                             </li>
                         </ul>
                     </li>
@@ -182,7 +195,7 @@
                         </a>
                     </li>
                     <li class="sub-menu">
-                        <a href="javascript:;" class="">
+                        <a href="/relatorio" class="">
                             <i class="icon_document_alt"></i>
                             <span>Relatorio</span>
                             <span class="menu-arrow arrow_carrot-right"></span>
